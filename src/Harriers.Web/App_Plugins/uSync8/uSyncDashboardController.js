@@ -1,4 +1,4 @@
-/**
+﻿/**
  *@ngdoc
  *@name uSync8DashboardController
  *@requires uSync8DashboardService

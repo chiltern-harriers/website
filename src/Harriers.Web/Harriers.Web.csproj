@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\uSync.8.0.0-beta.4\build\uSync.props" Condition="Exists('..\packages\uSync.8.0.0-beta.4\build\uSync.props')" />
   <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -390,6 +391,12 @@
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.0.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
+    <Reference Include="uSync8.BackOffice, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.8.0.0-beta.4\lib\net472\uSync8.BackOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="uSync8.Core, Version=8.0.0.33019, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.Core.8.0.0-beta.4\lib\net472\uSync8.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
@@ -449,8 +456,7 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
-    <Content Include="Harriers.Web.props" />
-    <Content Include="Harriers.Web.targets" />
+    <Content Include="config\uSyncCore.Config" />
     <Content Include="App_Plugins\uSync8\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
@@ -512,13 +518,12 @@
     <Error Condition="!Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets'))" />
-    <Error Condition="!Exists('$(MSBuildProjectDirectory)\Harriers.Web.props')" Text="$([System.String]::Format('$(ErrorText)', '$(MSBuildProjectDirectory)\Harriers.Web.props'))" />
-    <Error Condition="!Exists('$(MSBuildProjectDirectory)\Harriers.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(MSBuildProjectDirectory)\Harriers.Web.targets'))" />
+    <Error Condition="!Exists('..\packages\uSync.8.0.0-beta.4\build\uSync.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.8.0.0-beta.4\build\uSync.props'))" />
+    <Error Condition="!Exists('..\packages\uSync.8.0.0-beta.4\build\uSync.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.8.0.0-beta.4\build\uSync.targets'))" />
   </Target>
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
   <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" />
-  <Import Project="$(MSBuildProjectDirectory)\Harriers.Web.props" Condition="Exists('$(MSBuildProjectDirectory)\Harriers.Web.props')" />
-  <Import Project="$(MSBuildProjectDirectory)\Harriers.Web.targets" Condition="Exists('$(MSBuildProjectDirectory)\Harriers.Web.targets')" />
+  <Import Project="..\packages\uSync.8.0.0-beta.4\build\uSync.targets" Condition="Exists('..\packages\uSync.8.0.0-beta.4\build\uSync.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

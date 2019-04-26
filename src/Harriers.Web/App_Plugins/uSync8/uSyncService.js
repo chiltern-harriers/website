@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @ngdoc
  * @name uSync8Service
  * @requires $http

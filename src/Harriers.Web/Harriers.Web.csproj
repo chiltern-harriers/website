@@ -395,6 +395,14 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="App_Plugins\uSync8\changeDialog.html" />
+    <Content Include="App_Plugins\uSync8\changeDialogController.js" />
+    <Content Include="App_Plugins\uSync8\dashboard.html" />
+    <Content Include="App_Plugins\uSync8\lang\en-US.xml" />
+    <Content Include="App_Plugins\uSync8\usync.css" />
+    <Content Include="App_Plugins\uSync8\uSyncDashboardController.js" />
+    <Content Include="App_Plugins\uSync8\uSyncHub.js" />
+    <Content Include="App_Plugins\uSync8\uSyncService.js" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -415,6 +423,13 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="config\splashes\noNodes.aspx" />
+    <Content Include="css\bootstrap\bootstrap-theme.css" />
+    <Content Include="css\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\bootstrap.css" />
+    <Content Include="css\bootstrap\bootstrap.min.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\wysiwyg.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -434,6 +449,9 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="Harriers.Web.props" />
+    <Content Include="Harriers.Web.targets" />
+    <Content Include="App_Plugins\uSync8\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -444,6 +462,8 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\master.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -454,6 +474,9 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -489,9 +512,13 @@
     <Error Condition="!Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('$(MSBuildProjectDirectory)\Harriers.Web.props')" Text="$([System.String]::Format('$(ErrorText)', '$(MSBuildProjectDirectory)\Harriers.Web.props'))" />
+    <Error Condition="!Exists('$(MSBuildProjectDirectory)\Harriers.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(MSBuildProjectDirectory)\Harriers.Web.targets'))" />
   </Target>
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
   <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" />
+  <Import Project="$(MSBuildProjectDirectory)\Harriers.Web.props" Condition="Exists('$(MSBuildProjectDirectory)\Harriers.Web.props')" />
+  <Import Project="$(MSBuildProjectDirectory)\Harriers.Web.targets" Condition="Exists('$(MSBuildProjectDirectory)\Harriers.Web.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

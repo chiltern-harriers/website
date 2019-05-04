@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using System.Linq
 @using Umbraco.Web.PublishedModels
+@using System.Web.Optimization
 
 @{
 	Layout = null;
@@ -23,6 +24,8 @@
         }
         
         <title>Chiltern Harriers : @navigation.Title</title>
+        @Styles.Render("~/bundles/styles")
+        @Scripts.Render("~/bundles/scripts")
         @RenderSection("Head", false)
     </head>
     <body>

@@ -14,9 +14,21 @@ namespace Harriers.Web.Models.Navigation
             Link = link;
         }
 
+        public NavigationListItem(NavigationLink link, params NavigationListItem[] children)
+        {
+            Link = link;
+            this.Items = new List<NavigationListItem>(children);
+        }
+
         public NavigationListItem(string text)
         {
             Text = text;
+        }
+
+        public NavigationListItem(string text, params NavigationListItem[] children)
+        {
+            Text = text;
+            this.Items = new List<NavigationListItem>(children);
         }
 
         public string Text { get; set; }
@@ -25,6 +37,6 @@ namespace Harriers.Web.Models.Navigation
 
         public List<NavigationListItem> Items { get; set; }
 
-        public bool HasChildren { get { return Items != null && Items.Any() && Items.Count > 0; } }
+        public bool HasChildren { get { return Items != null && Items.Any(); } }
     }
 }

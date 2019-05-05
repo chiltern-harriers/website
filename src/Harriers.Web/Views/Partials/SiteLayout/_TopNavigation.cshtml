@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav mr-auto">
             @RenderChildItems(Model)
-        </ul>        
+        </ul>
     </div>
 </nav>
 
@@ -20,19 +20,22 @@
     {
         foreach (var item in listItems)
         {
-            <li class="nav-item" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null)">
-                @if (!string.IsNullOrEmpty(item.Text))
-                {
-                    @item.Text
-                }
-                else if (item.Link != null)
-                {
-                    <a href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
-                }
+            <li class="nav-item @(item.HasChildren ? "dropdown" : "")" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null)">
 
                 @if (item.HasChildren)
                 {
-                    <div class="dropdown-menu">
+                    var id = Guid.NewGuid();
+                    <a href="@(item.Link != null ? item.Link.Url : "#")"
+                       id="dropdown-@id.ToString()"
+                       role="button"
+                       class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        @(item.Link != null ? item.Link.Text : item.Text)
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdown-@id.ToString()">
                         @foreach (var child in item.Items)
                         {
                             if (!string.IsNullOrEmpty(child.Text))
@@ -41,10 +44,18 @@
                             }
                             else
                             {
-                                <a class="dropdown-item" href="@child.Link.Url">@child.Text</a>
+                                <a class="dropdown-item" href="@child.Link.Url">@child.Link.Text</a>
                             }
                         }
                     </div>
+                }
+                else if (!string.IsNullOrEmpty(item.Text))
+                {
+                    @item.Text
+                }
+                else if (item.Link != null)
+                {
+                    <a class="nav-link @(item.HasChildren ? "dropdown-toggle" : "")" href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
                 }
             </li>
         }

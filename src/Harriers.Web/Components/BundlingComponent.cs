@@ -31,7 +31,7 @@ namespace Harriers.Web.Components
                 .Include(
                     "~/Scripts/jquery-{version}.js",
                     "~/Scripts/popper.js",
-                    "~/Scriptsbootstrap.js"));
+                    "~/Scripts/bootstrap.js"));
         }
     }
 }

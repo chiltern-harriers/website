@@ -5,16 +5,16 @@
 
 /* Primary*/
 $harriers-primary-green: rgb(119,192,67);
-$harriers-dark-green: rgb(0,161,157);
+$harriers-dark-green: #107751;
 $harriers-dark-blue: rgb(0,113,147);
 /*Secondary*/
 $harriers-pale-green: rgb(231,238,221);
 $harriers-light-blue: rgb(57,198,244);
 $harriers-yellow: rgb(255,202,59);
 /*text*/
-$ara-text: rgb(0,49,59);
+$harriers-text: rgb(0,49,59);
 
-$primary: $harriers-dark-green;
+$primary: $harriers-primary-green;
 $header: $harriers-dark-green;
 $header-secondary: $harriers-pale-green;
 $secondary: $gray-600 !default;
@@ -23,7 +23,8 @@ $info: $cyan !default;
 $warning: $yellow !default;
 $danger: #B20000;
 $light: $gray-100 !default;
-$dark: $gray-800 !default;
+$dark: $harriers-dark-green;// $gray-800 !default;
+$body-color: $harriers-text;
 
 $theme-colors: (primary: $primary, secondary: $secondary, header: $header, success: $success, info: $info, warning: $warning, danger: $danger, light: $light, dark: $dark);
 
@@ -68,7 +69,7 @@ $profile-table-item-subheading: #616161;
 
 $image-border-bold: $harriers-dark-green;
 
-$dropdown-link-color: $white;
+$dropdown-link-color: $harriers-text;
 $custom-control-indicator-checked-bg: $dark;
 $custom-radio-indicator-icon-checked: none;
 

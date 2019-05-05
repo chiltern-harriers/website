@@ -21,8 +21,8 @@ namespace Harriers.Web.Controllers
         {
             List<NavigationListItem> nav = GetObjectFromCache<List<NavigationListItem>>(
                 "mainNav", 
-                5, 
-                GetNavigationModelFromDatabase);
+                5,
+                GetHardCodedList);
 
             return PartialView(VIEW_FOLDER_PATH + "_TopNavigation.cshtml", nav);
         }
@@ -47,6 +47,25 @@ namespace Harriers.Web.Controllers
                 cache.Set(cacheItemName, cachedObject, policy);
             }
             return cachedObject;
+        }
+
+        private List<NavigationListItem> GetHardCodedList()
+        {
+            List<NavigationListItem> nav = new List<NavigationListItem>();
+
+            nav.Add(new NavigationListItem(new NavigationLink("#", "Home")));
+            nav.Add(new NavigationListItem(
+                new NavigationLink("#", "Club Info"), 
+                new NavigationListItem(new NavigationLink("#", "About Us")),
+                new NavigationListItem(new NavigationLink("#", "Join")),
+                new NavigationListItem(new NavigationLink("#", "Club Kit")),
+                new NavigationListItem(new NavigationLink("#", "Club Notices"))));
+            nav.Add(new NavigationListItem(new NavigationLink("#", "News")));
+            nav.Add(new NavigationListItem(new NavigationLink("#", "Events")));
+            nav.Add(new NavigationListItem(new NavigationLink("#", "Training")));
+            nav.Add(new NavigationListItem(new NavigationLink("#", "Races")));
+
+            return nav;
         }
 
         /// <summary>

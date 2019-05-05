@@ -28,6 +28,9 @@
         @RenderSection("Head", false)
     </head>
     <body>
+        <header>
+            @{Html.RenderAction("RenderTopNavigation", "SiteLayout");}
+        </header>
         <main>
             @RenderBody()
         </main>

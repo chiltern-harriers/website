@@ -4,19 +4,19 @@
 @import "./components/_variables.scss";
 
 /* Primary*/
-$ara-primary-green: rgb(119,192,67);
-$ara-dark-green: rgb(0,161,157);
-$ara-dark-blue: rgb(0,113,147);
+$harriers-primary-green: rgb(119,192,67);
+$harriers-dark-green: rgb(0,161,157);
+$harriers-dark-blue: rgb(0,113,147);
 /*Secondary*/
-$ara-pale-green: rgb(231,238,221);
-$ara-light-blue: rgb(57,198,244);
-$ara-yellow: rgb(255,202,59);
+$harriers-pale-green: rgb(231,238,221);
+$harriers-light-blue: rgb(57,198,244);
+$harriers-yellow: rgb(255,202,59);
 /*text*/
 $ara-text: rgb(0,49,59);
 
-$primary: $ara-dark-blue;
-$header: $ara-primary-green;
-$header-secondary: $ara-dark-green;
+$primary: $harriers-dark-green;
+$header: $harriers-dark-green;
+$header-secondary: $harriers-pale-green;
 $secondary: $gray-600 !default;
 $success: #18C145;
 $info: $cyan !default;
@@ -27,19 +27,19 @@ $dark: $gray-800 !default;
 
 $theme-colors: (primary: $primary, secondary: $secondary, header: $header, success: $success, info: $info, warning: $warning, danger: $danger, light: $light, dark: $dark);
 
-$image-focus-color: $ara-yellow;
+$image-focus-color: $harriers-yellow;
 $image-secondary-color: #c3db7a;
 
 $body-bg: #F9F9F9;
-
+$bg-dark: $harriers-dark-green;
 $tile-focus-color: #C3E678;
-$tile-active-color: $ara-pale-green;
-$tile-visited-color: $ara-dark-blue;
+$tile-active-color: $harriers-pale-green;
+$tile-visited-color: $harriers-dark-blue;
 
-$button-border-color: $ara-light-blue;
-$button-hover-color: $ara-dark-green;
+$button-border-color: $harriers-pale-green;
+$button-hover-color: $harriers-dark-green;
 $button-focus-border-color: $image-focus-color;
-$button-active-color: $ara-light-blue;
+$button-active-color: $harriers-pale-green;
 
 $input-bg: $white;
 $input-focus-border-color: $input-border-color;
@@ -48,8 +48,8 @@ $input-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color;
 $input-border-color: #707070;
 
 $border-color: #D6D6D6;
-$link-visited-color: $ara-dark-blue;
-$link-hoover-color: $ara-primary-green;
+$link-visited-color: $harriers-dark-green;
+$link-hoover-color: $harriers-primary-green;
 $link-active-color: $white;
 $link-background-colour: $primary;
 
@@ -58,15 +58,15 @@ $table-head-bg: #D1DEE2;
 $table-accent-bg: #EFF0F1;
 $table-bg: $white;
 
-$menu-bg: $ara-dark-green;
-$menu-open-bg: $ara-dark-green;
+$menu-bg: $harriers-dark-green;
+$menu-open-bg: $harriers-dark-green;
 
-$profile-heading-color: $ara-dark-blue;
-$profile-subheading-color: $ara-light-blue;
+$profile-heading-color: $harriers-dark-blue;
+$profile-subheading-color: $harriers-light-blue;
 $profile-item-heading-color: #595959;
 $profile-table-item-subheading: #616161;
 
-$image-border-bold: $ara-dark-blue;
+$image-border-bold: $harriers-dark-green;
 
 $dropdown-link-color: $white;
 $custom-control-indicator-checked-bg: $dark;
@@ -77,6 +77,5 @@ $modal-content-bg: #F9F9F9;
 $modal-backdrop-opacity: 0.85;
 $modal-content-border-color: #D6D6D6;
 
-// $form-feedback-valid-color:         theme-color("success") !default;
 $form-feedback-invalid-color: theme-color("danger");
 $form-feedback-font-size: $font-size-base;

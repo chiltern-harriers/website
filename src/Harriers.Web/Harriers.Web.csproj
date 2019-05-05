@@ -612,6 +612,9 @@
   <ItemGroup>
     <Compile Include="Components\BundlingComponent.cs" />
     <Compile Include="Components\ComponentComposer.cs" />
+    <Compile Include="Controllers\SiteLayoutController.cs" />
+    <Compile Include="Models\Navigation\NavigationLink.cs" />
+    <Compile Include="Models\Navigation\NavigationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -654,6 +657,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Partials\SiteLayout\_TopNavigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

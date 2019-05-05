@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<NavigationListItem>>
+@using Harriers.Web.Models.Navigation
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Chiltern Harriers</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mr-auto">
+            @RenderChildItems(Model)
+        </ul>        
+    </div>
+</nav>
+
+@helper RenderChildItems(List<NavigationListItem> listItems)
+{
+    if (listItems != null)
+    {
+        foreach (var item in listItems)
+        {
+            <li class="nav-item" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null)">
+                @if (!string.IsNullOrEmpty(item.Text))
+                {
+                    @item.Text
+                }
+                else if (item.Link != null)
+                {
+                    <a href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
+                }
+
+                @if (item.HasChildren)
+                {
+                    <div class="dropdown-menu">
+                        @foreach (var child in item.Items)
+                        {
+                            if (!string.IsNullOrEmpty(child.Text))
+                            {
+                                @child.Text
+                            }
+                            else
+                            {
+                                <a class="dropdown-item" href="@child.Link.Url">@child.Text</a>
+                            }
+                        }
+                    </div>
+                }
+            </li>
+        }
+    }
+}   

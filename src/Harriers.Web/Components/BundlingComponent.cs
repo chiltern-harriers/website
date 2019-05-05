@@ -30,7 +30,7 @@ namespace Harriers.Web.Components
             bundles.Add(new CustomScriptBundle("~/bundles/scripts")
                 .Include(
                     "~/Scripts/jquery-{version}.js",
-                    "~/Scripts/popper.js",
+                   // "~/Scripts/popper.js",
                     "~/Scripts/bootstrap.js"));
         }
     }

@@ -10,14 +10,11 @@
         <link rel="preload" href="./fonts/open-sans/OpenSans-Regular-webfont.woff" as="font" type="font/woff" crossorigin>
         <style>
             .uk-offcanvas-bar {
-                background: linear-gradient(to left, #1d1635, #1d1635);
+                background: linear-gradient(to left, #2f9941, #2e9642);
             }
             .h-navbar-container:not(.uk-navbar-transparent) {
                 border-bottom: solid 2px #049800;
                 background-color: #fff;
-            }
-            h1, h2, h3, h4, h5. h6 {
-                color: #e5e5e5;
             }
             .uk-light .uk-navbar-nav > li.uk-active > a,
             .uk-section-primary:not(.uk-preserve-color) .uk-navbar-nav > li.uk-active > a,
@@ -29,11 +26,12 @@
             .uk-card-secondary.uk-card-body .uk-navbar-nav > li.uk-active > a,
             .uk-card-secondary>:not([class*='uk-card-media']) .uk-navbar-nav > li.uk-active > a,
             .uk-overlay-primary .uk-navbar-nav > li.uk-active > a,
-            .h-navbar-container:not(.uk-navbar-transparent) .uk-navbar .uk-icon,
             .h-navbar-container:not(.uk-navbar-transparent) .uk-navbar .h-logo,
             .h-navbar-container:not(.uk-navbar-transparent) .uk-navbar-nav > li.uk-active > a {
                 color: #049800;
             }
+
+            .h-navbar-container:not(.uk-navbar-transparent) .uk-navbar .uk-icon {}
             .h-sidebar-left {
                 position: fixed;
                 top: 80px;
@@ -41,7 +39,7 @@
                 box-sizing: border-box;
                 width: 240px !important;
                 padding: 40px 40px 60px 40px;
-                background: linear-gradient(to left, #1d1635, #1d1635);
+                background: linear-gradient(to left, #2f9941, #2e9642);
                 border-right: 1px #e5e5e5 solid;
                 overflow: auto;
             }
@@ -57,7 +55,8 @@
             }
             .h-sidebar-left .uk-nav-header,
             .h-sidebar-left .uk-nav a,
-            .h-sidebar-left .uk-nav-default .uk-nav-sub a {
+            .h-sidebar-left .uk-nav-default .uk-nav-sub a,
+            .uk-nav-default > li > a:focus, .uk-nav-default > li > a:hover {
                 color: #fff;
             }
             .h-sidebar-left .uk-nav-sub a {
@@ -68,10 +67,23 @@
             }
             .uk-navbar-right .uk-iconnav {
                 margin-right: 12px;
+            }            
+            @media(max-width: 360px) {
+                .h-social-icons {                
+                    display: none;                
+                }
             }
             @media (max-width:960px) {
                 .uk-navbar-container>.uk-container .uk-navbar-left {
                     margin-left:0;
+                }
+                body {
+                    zoom: 1;
+                }
+            }
+            @media (min-width: 960px) {
+                .h-main-content {
+                    margin-left: 240px;
                 }
             }
         </style>
@@ -90,12 +102,12 @@
                             </a>
                         </div>
                         <div class="uk-navbar-right">
-                            <ul class="uk-iconnav">
+                            <ul class="uk-iconnav h-social-icons">
                                 <li class="">
-                                    <a href="" uk-icon="icon: twitter" href="https://twitter.com"></a>
+                                    <a href="https://twitter.com/ChilternHarrier" uk-icon="icon: twitter" href="https://twitter.com"></a>
                                 </li>
                                 <li class="">
-                                    <a href="" uk-icon="icon: instagram" href="https://instagram.com"></a>
+                                    <a href="https://www.instagram.com/chilternharriers/" uk-icon="icon: instagram" href="https://instagram.com"></a>
                                 </li>
                                 <li class="">
                                     <a href="https://www.facebook.com/groups/ChilternHarriersAC/" uk-icon="icon: facebook" href="https://facebook.com"></a>
@@ -151,12 +163,6 @@
             </div>
         </div>
 
-        <div class="uk-section uk-section-default">
-            <div class="uk-container uk-position-relative">
-
-            </div>
-        </div>
-
         <div id="offcanvas" uk-offcanvas="overlay: true; mode: push">
             <div class="uk-offcanvas-bar">
         
@@ -203,5 +209,24 @@
             </div>
         </div>
 
+        <main class="h-main-content">
+            <div class="uk-section uk-section-default">
+                <div class="uk-container uk-position-relative">
+                    <article class="uk-article">
+                        <h1 class="uk-article-title">Race Report 4 - 6 May: Warming up for Pednor at the MK, Southampton, Vancouver and Skopje Marathons</h1>
+                        <p class="uk-article-meta">6/5/2019</p>
+                        <p class="uk-text-lead">It’s a pre-Pednor report today, folks. Looking forward to seeing a number of you at the Tennis Club later for what will be a great event, as ever, I am sure. And once again it’s been a successful weekend for Chiltern Harriers in road races.</p>
+                        <p>However, we’ll start things off with Star Wars Day parkruns on May 4th. The Force was definitely strong with Aran Davidson and Kate Loach, who came home in first place in Rickmansworth (Aran – 16.50) and Cassiobury Park (Kate – 21.04). Rebecca Lawson earned a course PB at Black Park (26.15), as did Trevor Brawn at Rickmansworth (24.46). There were also all-time PBs for Tamsin Finch and Abigail Chapman at Rickmansworth (24.39 and 27.53, respectively). Finally, there were milestones-a-plenty: George Fotherby completed his parkrun debut at Northampton (22.00); meanwhile joining the fifty club at Rickmansworth were Sarah and Brian Gregory (29.55 and 29.56), as well as Harriet Lemon, who also earned herself a new all-time PB of 25.10, thus kicking off her 50thbirthday weekend in real style. Well done everyone!</p>
+                        <p>Also on Saturday, Fabian Downs was 4thmale in the Skopje Marathon in a time of 2.34.43.</p>
+                        <p>Moving on to Sunday, across the ocean in far-flung Vancouver, former Harrier Ash Holmes joined the sub-three hour marathon crew, completing the BMO Vancouver Marathon in a cool 2.56.43. Somewhat closer to home, Roger Ellerby ran the Southampton Marathon in 4.04.26 and Ian Lawson took on ‘the tough one’ (aka the Three Forts Challenge, with 27 miles of mixed terrain and climbs of 3450 feet), completing it in a sterling 4.41.49. </p>
+                        <p>On the track in Bedford today Will Perkin finished 4thin the 800m final of the BUCS (British Universities & Colleges Sport) Outdoor Athletics Championships.</p>
+                        <p>And finally, the MK Marathon weekend. Tom Dixon made Race Report history today (in fact ‘real’ history) be becoming the first Harrier that I can remember to claim an actual world record. Tom became the fastest ever half marathon runner, dressed as a children’s book character (Willy Wonka), speeding round the course in 1.23.04. Joining Tom today in the half marathon was David Holmes (2.00.41). In the marathon event, Ben Martin was the first Harrier home in 3.03.10. He was joined by: Nicola Conner (6thV45 in 3.44.30); Rik Edwards (5thV60 in 3.52.11); Katherine Day (4.01.16) and Rashila Waanninayake (4.09.51, following a 33.03 blast round the Rocket 5k yesterday). Those results represent the outcome of some concerted effort in training by our athletes. A huge congratulations to all.</p>
+                        <p>And there’s not long left to book your tickets for the Club Awards Evening & Social on 18 May. 109 of you have already confirmed you’re coming, but we’d love to see more of you there. Please do book your tickets sooner rather than later to allow final numbers to be confirmed to the caterer. All the details are here.</p>
+                    </article>
+
+                    
+                </div>
+            </div>
+        </main>
     </body>
 </html>

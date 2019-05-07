@@ -4,7 +4,7 @@
 @import "./components/_variables.scss";
 
 /* Primary*/
-$harriers-primary-green: rgb(119,192,67);
+$harriers-primary-green: #00c851;
 $harriers-dark-green: #107751;
 $harriers-dark-blue: rgb(0,113,147);
 /*Secondary*/
@@ -26,7 +26,18 @@ $light: $gray-100 !default;
 $dark: $harriers-dark-green;// $gray-800 !default;
 $body-color: $harriers-text;
 
-$theme-colors: (primary: $primary, secondary: $secondary, header: $header, success: $success, info: $info, warning: $warning, danger: $danger, light: $light, dark: $dark);
+$navbar-dark-color: #fff;
+
+$theme-colors: (
+    primary: $primary, 
+    secondary: $secondary, 
+    header: $header, 
+    success: $success, 
+    info: $info, 
+    warning: $warning, 
+    danger: $danger, 
+    light: $light, 
+    dark: $dark);
 
 $image-focus-color: $harriers-yellow;
 $image-secondary-color: #c3db7a;

@@ -24,14 +24,13 @@ namespace Harriers.Web.Components
 
             bundles.Add(new CustomStyleBundle("~/bundles/styles")
                 .Include(
-                    "~/Content/core.scss",
+                    "~/Content/site.scss",
                     "~/Content/fonts.css"));
 
             bundles.Add(new CustomScriptBundle("~/bundles/scripts")
                 .Include(
-                    "~/Scripts/jquery-{version}.js",
-                   // "~/Scripts/popper.js",
-                    "~/Scripts/bootstrap.js"));
+                    "~/Scripts/uikit/uikit.js",
+                    "~/Scripts/uikit/uikit-icons.js"));
         }
     }
 }

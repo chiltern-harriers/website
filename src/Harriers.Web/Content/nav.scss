@@ -1,0 +1,111 @@
+﻿.uk-offcanvas-bar {
+    background: linear-gradient(to left, #3b1b49, #331242);
+}
+
+.h-navbar-container:not(.uk-navbar-transparent) {
+    border-bottom: solid 2px #4fb74e;
+    background-color: #fff;
+}
+
+.uk-light .uk-navbar-nav > li.uk-active > a,
+.uk-section-primary:not(.uk-preserve-color) .uk-navbar-nav > li.uk-active > a,
+.uk-section-secondary:not(.uk-preserve-color) .uk-navbar-nav > li.uk-active > a,
+.uk-tile-primary:not(.uk-preserve-color) .uk-navbar-nav > li.uk-active > a,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-navbar-nav > li.uk-active > a,
+.uk-card-primary.uk-card-body .uk-navbar-nav > li.uk-active > a,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-navbar-nav > li.uk-active > a,
+.uk-card-secondary.uk-card-body .uk-navbar-nav > li.uk-active > a,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-navbar-nav > li.uk-active > a,
+.uk-overlay-primary .uk-navbar-nav > li.uk-active > a,
+.h-navbar-container:not(.uk-navbar-transparent) .uk-navbar .h-logo,
+.h-navbar-container:not(.uk-navbar-transparent) .uk-navbar-nav > li.uk-active > a {
+    color: #4fb74e;
+}
+
+.uk-offcanvas-overlay::before {
+    background: rgba(0,0,0,0.5);
+}
+
+.h-sidebar-left {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 240px !important;
+    padding: 40px 40px 60px 40px;
+    background: linear-gradient(to left, #f1f1f1, #f1f1f1);
+    border-right: 1px #e5e5e5 solid;
+    overflow: auto;
+}
+
+.h-sidebar-nav .uk-nav-header {
+    border-bottom: solid 1px #d2d2d2;
+}
+
+.h-sidebar-nav h1,
+.h-sidebar-nav h2,
+.h-sidebar-nav h3,
+.h-sidebar-nav h4,
+.h-sidebar-nav h5 {
+    color: #5c2e86;
+}
+
+.uk-offcanvas-bar h1,
+.uk-offcanvas-bar h2,
+.uk-offcanvas-bar h3,
+.uk-offcanvas-bar h4,
+.uk-offcanvas-bar h5 {
+    color: rgba(255,255,255,.8);
+}
+
+.h-sidebar-left .uk-nav-header,
+.h-sidebar-left .uk-nav a,
+.h-sidebar-left .uk-nav-default .uk-nav-sub a,
+.uk-nav-default > li > a:focus, .uk-nav-default > li > a:hover,
+.h-sidebar-left .uk-nav-sub a {
+    color: #5c2e86;
+}
+
+.h-sidebar-left .uk-nav-sub a {
+    color: #333333 !important;
+}
+
+.h-sidebar-left .uk-nav a:active {
+    color: #333333;
+}
+
+.uk-navbar-right .uk-iconnav {
+    margin-right: 12px;
+}
+
+@media(max-width: 360px) {
+    .h-social-icons {
+        display: none;
+    }
+}
+
+@media (max-width:960px) {
+    .uk-navbar-container > .uk-container .uk-navbar-left {
+        margin-left: 0;
+    }
+
+    body {
+        zoom: 1;
+    }
+}
+
+@media (min-width: 960px) {
+    .h-main-content {
+        margin-left: 240px;
+    }
+}
+
+.uk-card-primary.uk-card-body .uk-nav-default .uk-nav-header, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-header, .uk-card-secondary.uk-card-body .uk-nav-default .uk-nav-header, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-header, .uk-light .uk-nav-default .uk-nav-header, .uk-offcanvas-bar .uk-nav-default .uk-nav-header, .uk-overlay-primary .uk-nav-default .uk-nav-header, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-header, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-header, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-header, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-header,
+.uk-card-primary.uk-card-body .uk-nav-default .uk-nav-sub a, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a, .uk-card-secondary.uk-card-body .uk-nav-default .uk-nav-sub a, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a, .uk-light .uk-nav-default .uk-nav-sub a, .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a, .uk-overlay-primary .uk-nav-default .uk-nav-sub a, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a {
+    color: rgba(255,255,255,.8);
+}
+
+.uk-card-primary.uk-card-body .uk-nav-default > li > a:focus, .uk-card-primary.uk-card-body .uk-nav-default > li > a:hover, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default > li > a:focus, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default > li > a:hover, .uk-card-secondary.uk-card-body .uk-nav-default > li > a:focus, .uk-card-secondary.uk-card-body .uk-nav-default > li > a:hover, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default > li > a:focus, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default > li > a:hover, .uk-light .uk-nav-default > li > a:focus, .uk-light .uk-nav-default > li > a:hover, .uk-offcanvas-bar .uk-nav-default > li > a:focus, .uk-offcanvas-bar .uk-nav-default > li > a:hover, .uk-overlay-primary .uk-nav-default > li > a:focus, .uk-overlay-primary .uk-nav-default > li > a:hover, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default > li > a:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:hover,
+.uk-card-primary.uk-card-body .uk-nav-default .uk-nav-sub a:focus, .uk-card-primary.uk-card-body .uk-nav-default .uk-nav-sub a:hover, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:focus, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:hover, .uk-card-secondary.uk-card-body .uk-nav-default .uk-nav-sub a:focus, .uk-card-secondary.uk-card-body .uk-nav-default .uk-nav-sub a:hover, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:focus, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:hover, .uk-light .uk-nav-default .uk-nav-sub a:focus, .uk-light .uk-nav-default .uk-nav-sub a:hover, .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:focus, .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover, .uk-overlay-primary .uk-nav-default .uk-nav-sub a:focus, .uk-overlay-primary .uk-nav-default .uk-nav-sub a:hover, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover {
+    color: rgba(255,255,255,.3);
+}

@@ -671,6 +671,7 @@
     <Content Include="config\uSyncCore.Config" />
     <Content Include="config\uSync8.config" />
     <Content Include="App_Plugins\uSync8\package.manifest" />
+    <Content Include="Content\nav.scss" />
     <None Include="Content\site.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />

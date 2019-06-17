@@ -1,65 +1,26 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<NavigationListItem>>
 @using Harriers.Web.Models.Navigation
+<div uk-navbar class="" style="margin-top:-1.5rem;margin-left:-1rem;">
+    <ul class="uk-navbar-nav">
 
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fg-primary">
-    <div class="container">
-        @*<a class="navbar-brand" href="#">Chiltern Harriers</a>*@
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-center" id="navMenu">
-            <ul class="navbar-nav mr-auto">
-                @RenderChildItems(Model)
-            </ul>
-        </div>
-    </div>
-</nav>
-
-@helper RenderChildItems(List<NavigationListItem> listItems)
-{
-    if (listItems != null)
-    {
-        foreach (var item in listItems)
+        @foreach (var item in Model)
         {
-            <li class="nav-item @(item.HasChildren ? "dropdown" : "")" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null)">
-
+            <li>
+                <a href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
                 @if (item.HasChildren)
                 {
-                    var id = Guid.NewGuid();
-                    <a href="@(item.Link != null ? item.Link.Url : "#")"
-                       id="dropdown-@id.ToString()"
-                       role="button"
-                       class="nav-link dropdown-toggle"
-                       data-toggle="dropdown"
-                       aria-haspopup="true"
-                       aria-expanded="false">
-                        @(item.Link != null ? item.Link.Text : item.Text)
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdown-@id.ToString()">
-                        @foreach (var child in item.Items)
-                        {
-                            if (!string.IsNullOrEmpty(child.Text))
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            @foreach (var child in item.Items)
                             {
-                                @child.Text
+                                <li>
+                                    <a href="@child.Link.Url">@child.Link.Text</a>
+                                </li>
                             }
-                            else
-                            {
-                                <a class="dropdown-item" href="@child.Link.Url">@child.Link.Text</a>
-                            }
-                        }
+                        </ul>
                     </div>
-                }
-                else if (!string.IsNullOrEmpty(item.Text))
-                {
-                    @item.Text
-                }
-                else if (item.Link != null)
-                {
-                    <a class="nav-link @(item.HasChildren ? "dropdown-toggle" : "")" href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
                 }
             </li>
         }
-    }
-}   
+    </ul>
+</div>

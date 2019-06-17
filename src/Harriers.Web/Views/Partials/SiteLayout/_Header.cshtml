@@ -1,28 +1,58 @@
-﻿<div uk-sticky="media: 960" class="h-navbar-container uk-navbar-container uk-sticky uk-sticky-fixed uk-active uk-sticky-below">
-    <div class="uk-container uk-container-expand">
-        <nav class="uk-navbar">
-            <div class="uk-navbar-left ">
-                <a uk-navbar-toggle class="uk-hidden@m uk-navbar-toggle-icon uk-icon" href="" uk-icon="icon: menu" uk-toggle="target: #offcanvas"></a>
-                <a class="h-logo uk-navbar-item uk-logo" href="#">
-                    <img src="Content/images/logo.jpg" class=" uk-visible@s uk-margin-small-right" width="50" height="50" />
-                    <span class="uk-visible@s">Chiltern Harriers A.C.</span>
-                    <span class="uk-hidden@s">Chiltern Harriers</span>
-                </a>
+﻿<div class="uk-section-primary uk-preserve-color ch-nav-bar">
+    <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+        <div class="uk-navbar-container">
+            <div class="uk-container uk-container-expand">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a uk-navbar-toggle class="uk-hidden@m uk-navbar-toggle-icon uk-icon uk-margin-small-left" href="" uk-icon="icon: menu" uk-toggle="target: #offcanvas"></a>
+                        <a class="uk-navbar-item uk-logo" href="#">
+                            <img src="Content/images/logo.jpg" class="uk-visible@s uk-margin-small-right" width="50" height="50" />
+                        </a>
+                        <a class="uk-navbar-item uk-logo uk-logo-inverse" href="#">
+                            <img src="Content/images/logo.jpg" class="uk-visible@s uk-margin-small-right" width="50" height="50" />
+                        </a>
+                        <span>Chiltern Harriers A.C.</span>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <ul class="uk-iconnav h-social-icons">
+                            <li class="">
+                                <a href="https://twitter.com/ChilternHarrier" uk-icon="icon: twitter"></a>
+                            </li>
+                            <li class="">
+                                <a href="https://www.instagram.com/chilternharriers/" uk-icon="icon: instagram"></a>
+                            </li>
+                            <li class="">
+                                <a href="https://www.facebook.com/groups/ChilternHarriersAC/" uk-icon="icon: facebook"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk-visible@m" >
+                    @{Html.RenderAction("TopNavigation", "SiteLayout");}
+                </div>
             </div>
-            <div class="uk-navbar-right">
-                <ul class="uk-iconnav h-social-icons">
-                    <li class="">
-                        <a href="https://twitter.com/ChilternHarrier" uk-icon="icon: twitter"></a>
-                    </li>
-                    <li class="">
-                        <a href="https://www.instagram.com/chilternharriers/" uk-icon="icon: instagram"></a>
-                    </li>
-                    <li class="">
-                        <a href="https://www.facebook.com/groups/ChilternHarriersAC/" uk-icon="icon: facebook"></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        </div>
+    </div>
+    <div class="uk-section uk-light uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(http://chilternharriers.weebly.com/uploads/2/6/1/9/26199763/20190616-154319_orig.jpg)">
+        <div class="uk-container">
+            <p>
+                Welcome to the Chiltern Harriers web site.
+                We are an active athletics club competing in Track & Field, Cross-Country and Road Running.  The Club is based in the Chiltern District in south Buckinghamshire and has around 600 members.
+            </p>
+            <p>
+                We are a friendly club, welcoming all members of the community.
+                ​We cater for a wide range of athletic abilities and aspirations.
+                We have athletes who enjoy the competitive aspects of the sport and thrive on competition, and those who just want to run for pleasure and to keep fit
+            </p>
+        </div>
     </div>
 </div>
-@{Html.RenderAction("RenderTopNavigation", "SiteLayout");}
+
+<div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
+
+<div id="offcanvas" uk-offcanvas="overlay: true; mode: push">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        @{Html.RenderAction("SidebarNavigation", "SiteLayout");}
+    </div>
+</div>

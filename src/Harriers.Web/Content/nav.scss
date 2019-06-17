@@ -1,4 +1,14 @@
-﻿.uk-offcanvas-bar {
+﻿.ch-nav-bar {
+    .uk-navbar-container.uk-navbar-transparent.uk-light {
+        .uk-logo :not(.uk-logo-inverse) {
+            display: none;
+        }
+    }
+    .uk-light, .uk-light .uk-iconnav > * > a, .uk-light .uk-navbar-nav > li > a {
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
+/*.uk-offcanvas-bar {
     background: linear-gradient(to left, #3b1b49, #331242);
 }
 
@@ -108,4 +118,5 @@
 .uk-card-primary.uk-card-body .uk-nav-default > li > a:focus, .uk-card-primary.uk-card-body .uk-nav-default > li > a:hover, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default > li > a:focus, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default > li > a:hover, .uk-card-secondary.uk-card-body .uk-nav-default > li > a:focus, .uk-card-secondary.uk-card-body .uk-nav-default > li > a:hover, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default > li > a:focus, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default > li > a:hover, .uk-light .uk-nav-default > li > a:focus, .uk-light .uk-nav-default > li > a:hover, .uk-offcanvas-bar .uk-nav-default > li > a:focus, .uk-offcanvas-bar .uk-nav-default > li > a:hover, .uk-overlay-primary .uk-nav-default > li > a:focus, .uk-overlay-primary .uk-nav-default > li > a:hover, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default > li > a:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default > li > a:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:focus, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default > li > a:hover,
 .uk-card-primary.uk-card-body .uk-nav-default .uk-nav-sub a:focus, .uk-card-primary.uk-card-body .uk-nav-default .uk-nav-sub a:hover, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:focus, .uk-card-primary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:hover, .uk-card-secondary.uk-card-body .uk-nav-default .uk-nav-sub a:focus, .uk-card-secondary.uk-card-body .uk-nav-default .uk-nav-sub a:hover, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:focus, .uk-card-secondary > :not([class*=uk-card-media]) .uk-nav-default .uk-nav-sub a:hover, .uk-light .uk-nav-default .uk-nav-sub a:focus, .uk-light .uk-nav-default .uk-nav-sub a:hover, .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:focus, .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover, .uk-overlay-primary .uk-nav-default .uk-nav-sub a:focus, .uk-overlay-primary .uk-nav-default .uk-nav-sub a:hover, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-section-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:focus, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-default .uk-nav-sub a:hover {
     color: rgba(255,255,255,.3);
-}
+
+}*/

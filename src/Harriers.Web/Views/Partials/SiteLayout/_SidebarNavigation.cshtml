@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<List<NavigationListItem>>
+@using Harriers.Web.Models.Navigation
+
+    <div class="h-sidebar-nav">
+        <h4>Navigation</h4>
+        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
+            @RenderChildItems(Model)
+        </ul>
+    </div>
+
+    @helper RenderChildItems(List<NavigationListItem> listItems)
+    {
+        if (listItems != null)
+        {
+            foreach (var item in listItems)
+            {
+                if (item.HasChildren)
+                {
+                    <li class="uk-parent uk-open">
+                        <a href="#" class="uk-nav-header">@item.Link.Text</a>
+
+                        <ul class="uk-nav-sub">
+                            @foreach (var child in item.Items)
+                            {
+                                <li>
+                                    @if (!string.IsNullOrEmpty(child.Text))
+                                    {
+                                        @child.Text
+                                    }
+                                    else
+                                    {
+                                        <a href="@child.Link.Url">@child.Link.Text</a>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                else if (!string.IsNullOrEmpty(item.Text))
+                {
+                    <li class="uk-nav-header">
+                        @item.Text
+                    </li>
+                }
+                else if (item.Link != null)
+                {
+                    <li class="uk-nav-header">
+                        <a href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
+                    </li>
+                }
+            }
+        }
+    }

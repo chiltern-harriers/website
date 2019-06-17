@@ -672,6 +672,7 @@
     <Content Include="config\uSync8.config" />
     <Content Include="App_Plugins\uSync8\package.manifest" />
     <Content Include="Content\nav.scss" />
+    <Content Include="Content\site-theme.scss" />
     <None Include="Content\site.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
@@ -686,9 +687,10 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\master.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <Content Include="Views\Partials\SiteLayout\_TopNavigation.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_SidebarNavigation.cshtml" />
     <Content Include="Views\Partials\SiteLayout\_Header.cshtml" />
     <Content Include="Scripts\uikit\components\.gitkeep" />
+    <Content Include="Views\Partials\SiteLayout\_TopNavigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

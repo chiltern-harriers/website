@@ -14,13 +14,27 @@ namespace Harriers.Web.Controllers
         public const string VIEW_FOLDER_PATH = "~/Views/Partials/SiteLayout/";
 
         /// <summary>
-        /// Renders the top navigation partial
+        /// Renders the sidebar navigation partial
         /// </summary>
         /// <returns>Partial view with a model</returns>
-        public ActionResult RenderTopNavigation()
+        public ActionResult SidebarNavigation()
         {
             List<NavigationListItem> nav = GetObjectFromCache<List<NavigationListItem>>(
                 "mainNav", 
+                5,
+                GetHardCodedList);
+
+            return PartialView(VIEW_FOLDER_PATH + "_SidebarNavigation.cshtml", nav);
+        }
+
+        /// <summary>
+        /// Renders the sidebar navigation partial
+        /// </summary>
+        /// <returns>Partial view with a model</returns>
+        public ActionResult TopNavigation()
+        {
+            List<NavigationListItem> nav = GetObjectFromCache<List<NavigationListItem>>(
+                "mainNav",
                 5,
                 GetHardCodedList);
 
@@ -51,19 +65,45 @@ namespace Harriers.Web.Controllers
 
         private List<NavigationListItem> GetHardCodedList()
         {
-            List<NavigationListItem> nav = new List<NavigationListItem>();
+            var nav = new List<NavigationListItem>();
 
-            nav.Add(new NavigationListItem(new NavigationLink("#", "Home")));
-            nav.Add(new NavigationListItem(
-                new NavigationLink("#", "Club Info"), 
-                new NavigationListItem(new NavigationLink("#", "About Us")),
-                new NavigationListItem(new NavigationLink("#", "Join")),
-                new NavigationListItem(new NavigationLink("#", "Club Kit")),
-                new NavigationListItem(new NavigationLink("#", "Club Notices"))));
-            nav.Add(new NavigationListItem(new NavigationLink("#", "News")));
-            nav.Add(new NavigationListItem(new NavigationLink("#", "Events")));
-            nav.Add(new NavigationListItem(new NavigationLink("#", "Training")));
-            nav.Add(new NavigationListItem(new NavigationLink("#", "Races")));
+            nav.Add(
+                new NavigationListItem(new NavigationLink("#", "Home")));
+
+            nav.Add(
+                new NavigationListItem(
+                    new NavigationLink("#", "About"),
+                        new NavigationListItem(new NavigationLink("#", "About Us")),
+                        new NavigationListItem(new NavigationLink("#", "Training Times"),
+                            new NavigationListItem(new NavigationLink("#", "Juniors")),
+                            new NavigationListItem(new NavigationLink("#", "Seniors"))),
+                        new NavigationListItem(new NavigationLink("#", "Club Contacts"))));
+
+            nav.Add(
+                new NavigationListItem(new NavigationLink("#", "Membership"),
+                    new NavigationListItem(new NavigationLink("#", "Membership Details")),
+                    new NavigationListItem(new NavigationLink("#", "Club Kit")),
+                    new NavigationListItem(new NavigationLink("#", "Code of Practise")),
+                    new NavigationListItem(new NavigationLink("#", "Offers for the Club"))));
+
+            nav.Add(
+                new NavigationListItem(new NavigationLink("#", "Calendar"),
+                    new NavigationListItem(new NavigationLink("#", "Race Calendar")),
+                    new NavigationListItem(new NavigationLink("#", "Club Events"))));
+
+            nav.Add(
+                new NavigationListItem(new NavigationLink("#", "Events"),
+                    new NavigationListItem(new NavigationLink("#", "Cross Country")),
+                    new NavigationListItem(new NavigationLink("#", "Track and Field")),
+                    new NavigationListItem(new NavigationLink("#", "Junior Triathlon")),
+                    new NavigationListItem(new NavigationLink("#", "Shardeloes 10k")),
+                    new NavigationListItem(new NavigationLink("#", "Herbert's Hole")),
+                    new NavigationListItem(new NavigationLink("#", "Pednor 5"))));
+
+            nav.Add(
+                new NavigationListItem(new NavigationLink("#", "Club News"),
+                    new NavigationListItem(new NavigationLink("#", "Latest News")),
+                    new NavigationListItem(new NavigationLink("#", "Notices"))));
 
             return nav;
         }

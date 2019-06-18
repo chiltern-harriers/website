@@ -4,16 +4,24 @@
             <div class="uk-container uk-container-expand">
                 <div uk-navbar>
                     <div class="uk-navbar-left">
-                        <a uk-navbar-toggle class="uk-hidden@m uk-navbar-toggle-icon uk-icon uk-margin-small-left" href="" uk-icon="icon: menu" uk-toggle="target: #offcanvas"></a>
+                        <a uk-navbar-toggle 
+                           class="uk-hidden@m uk-navbar-toggle-icon uk-icon uk-margin-small-left"
+                           href="" 
+                           uk-icon="icon: menu" 
+                           uk-toggle="target: #offcanvas-slide"></a>
+
                         <a class="uk-navbar-item uk-logo ch-logo" href="#">
                             <img src="Content/images/logo.svg" class="uk-visible@s uk-margin-small-right" width="50" height="50" />
                         </a>
+
                         <a class="uk-navbar-item uk-logo ch-logo-inverse" href="#">
                             <img src="Content/images/logo-inverse.svg" class="uk-visible@s uk-margin-small-right" width="50" height="50" />
                         </a>
+
                         <span>Chiltern Harriers A.C.</span>
+
                     </div>
-                    <div class="uk-navbar-right">
+                    <div class="uk-navbar-right uk-margin-small-right">
                         <ul class="uk-iconnav h-social-icons">
                             <li class="">
                                 <a href="https://twitter.com/ChilternHarrier" uk-icon="icon: twitter"></a>
@@ -33,31 +41,29 @@
             </div>
         </div>
     </div>
-    <div class="uk-section uk-light  uk-panel uk-flex uk-flex-center uk-flex-middle" style="margin-bottom:50px;margin-top:-50px">
-        <div class="uk-container">
-            <h3>
-                Welcome to the Chiltern Harriers web site.
+    <div class="uk-section uk-light uk-panel uk-container" style="margin-bottom:50px;">
+        <h3>
+            Welcome to the Chiltern Harriers web site.
 
-            </h3>
-            <p>
-                We are an active athletics club competing in Track & Field, Cross-Country and Road Running.
-                The Club is based in the Chiltern District in south Buckinghamshire and has around 600 members.
-            </p>
-            <p>
-                We are a friendly club, welcoming all members of the community.
-            </p>
-            <p>
-                ​We cater for a wide range of athletic abilities and aspirations.
-                We have athletes who enjoy the competitive aspects of the sport and thrive on competition,
-                and those who just want to run for pleasure and to keep fit
-            </p>
-        </div>
+        </h3>
+        <p>
+            We are an active athletics club competing in Track & Field, Cross-Country and Road Running.
+            The Club is based in the Chiltern District in south Buckinghamshire and has around 600 members.
+        </p>
+        <p>
+            We are a friendly club, welcoming all members of the community.
+        </p>
+        <p>
+            ​We cater for a wide range of athletic abilities and aspirations.
+            We have athletes who enjoy the competitive aspects of the sport and thrive on competition,
+            and those who just want to run for pleasure and to keep fit
+        </p>
     </div>
 </div>
 
 <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
 
-<div id="offcanvas" uk-offcanvas="overlay: true; mode: push">
+<div id="offcanvas-slide" uk-offcanvas="overlay: true; mode: slide">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
         @{Html.RenderAction("SidebarNavigation", "SiteLayout");}

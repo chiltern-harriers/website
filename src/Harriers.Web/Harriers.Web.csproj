@@ -478,6 +478,7 @@
     <Content Include="Content\fonts\open-sans\OpenSans-Bold-webfont.svg" />
     <Content Include="Content\fonts\open-sans\OpenSans-Regular-webfont.svg" />
     <Content Include="Content\fonts\open-sans\OpenSans-Semibold-webfont.svg" />
+    <Content Include="Content\images\logo.svg" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="css\main.css" />
     <Content Include="css\wysiwyg.css" />

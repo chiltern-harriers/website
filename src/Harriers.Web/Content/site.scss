@@ -1,16 +1,11 @@
 ﻿// 1. Your custom variables and variable overwrites.
 @import "site-theme.scss";
-@import "nav.scss";
 
 // 2. Import default variables and available mixins.
 @import "uikit/variables-theme.scss";
 @import "uikit/mixins-theme.scss";
+@import "nav.scss";
 
-
-// 3. Your custom mixin overwrites.
-@mixin hook-card() {
-	color: #000;
-}
 
 // 4. Import UIkit.
 @import "uikit/uikit-theme.scss";

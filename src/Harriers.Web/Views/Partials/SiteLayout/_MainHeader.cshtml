@@ -1,11 +1,32 @@
 ﻿@using System.Linq
 
 @{
+    // Pick a random image to show as the banner on the home page
+    // 1. Get the banners collection from the home page model
     var banners = Model.BannerImages;
+    
+    // 2. Based on the number of images in the collection, pick a random index
     var bannerIndex = new System.Random().Next(0, banners.Count);
+    
+    // 3. Set the banner to use based on the random index
     var banner = banners[bannerIndex];
+    
+    // Define the classes to be added to the top level nav bar
+    var headerClasses = new string[] {
+        "ch-nav-bar",
+        "uk-section-secondary",
+        "uk-preserve-color",
+        "uk-background-blend-soft-light",
+        //"uk-background-fixed",
+        "uk-background-cover",
+        "uk-background-center-center",
+        "uk-height-extra-large"
+    };
+    
+    var headerClass = headerClasses.Aggregate((a, b) => $"{a} {b}");
 }
-<div class="uk-section-primary uk-preserve-color ch-nav-bar uk-background-blend-multiply uk-background-cover uk-height-extra-large" style="background-image: url(@(banner.Url))">
+
+<div class="@headerClass" style="background-image: url(@(banner.Url))">
     <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
         <div class="uk-navbar-container">
             <div class="uk-container uk-container-expand">
@@ -48,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="uk-section uk-light uk-panel uk-container" style="margin-bottom:50px;">
+    <div class="uk-section uk-light uk-panel uk-container uk-text-center" style="margin-bottom:50px;">
         @Html.Raw(Model.WelcomeMessage)
     </div>
 </div>

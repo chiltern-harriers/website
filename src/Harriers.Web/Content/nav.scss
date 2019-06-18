@@ -36,4 +36,8 @@
     .ch-navbar-brand {
         color: $chac-dark-green;
     }
+
+    .uk-navbar-container.uk-navbar-sticky {
+        box-shadow: 0px 1px 4px 1px rgba(34, 148, 20, 0.35);
+    }
 }

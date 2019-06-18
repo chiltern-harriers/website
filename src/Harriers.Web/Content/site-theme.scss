@@ -4,11 +4,17 @@ $chac-secondary-dark: #232923;
 $chac-white: #fff;
 
 $global-link-color: $chac-light-green;
-$global-primary-background: $chac-light-green;
+$global-primary-background: $chac-dark-green;
 $global-secondary-background: $chac-secondary-dark;
-$navbar-dropdown-nav-item-color: $chac-dark-green;
-$navbar-background: $chac-white;
+//$navbar-dropdown-nav-item-color: $chac-dark-green;
+$navbar-dropdown-nav-item-hover-color: $chac-dark-green;
+$navbar-nav-item-hover-color: $chac-dark-green;
+$iconnav-item-hover-color: $chac-dark-green;
 
+$navbar-background: $chac-white;
+$nav-default-item-active-color: $chac-white;
+$nav-default-sublist-item-hover-color: $chac-white;
+$nav-primary-sublist-item-color: $chac-white;
 $offcanvas-close-position: 25px;
 
 @mixin hook-offcanvas-close() {

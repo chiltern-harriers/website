@@ -1,21 +1,31 @@
-﻿$chac-dark-green: #229414;
+﻿// Theme colours 
+$chac-dark-green: #229414;
 $chac-light-green: #4fb74e;
 $chac-secondary-dark: #232923;
+$chac-medium-green: #075a06;
 $chac-white: #fff;
 
+// Overrides for the UIKit colours to set the primary and secondary colours to the CHAC theme
 $global-link-color: $chac-light-green;
 $global-primary-background: $chac-dark-green;
 $global-secondary-background: $chac-secondary-dark;
+
 //$navbar-dropdown-nav-item-color: $chac-dark-green;
 $navbar-dropdown-nav-item-hover-color: $chac-dark-green;
 $navbar-nav-item-hover-color: $chac-dark-green;
 $iconnav-item-hover-color: $chac-dark-green;
 
+// Override the default grey on the top level navbar
 $navbar-background: $chac-white;
 $nav-default-item-active-color: $chac-white;
 $nav-default-sublist-item-hover-color: $chac-white;
 $nav-primary-sublist-item-color: $chac-white;
+
+// A slight tweak to the close button on the side bar
 $offcanvas-close-position: 25px;
+
+// The colour for the side bar
+$offcanvas-bar-background: $chac-medium-green;
 
 @mixin hook-offcanvas-close() {
     position: absolute !important;

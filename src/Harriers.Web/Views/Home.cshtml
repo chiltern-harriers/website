@@ -1,11 +1,12 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
-@using ContentModels = Umbraco.Web.PublishedModels
+﻿@using Umbraco.Web.PublishedModels
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+
 @{
     Layout = "master.cshtml";
 }
 
 @section Header {
-    @Html.Partial("SiteLayout/_MainHeader")
+    @Html.Partial("SiteLayout/_MainHeader", Model)
 }
 
 @Html.Raw(Model.Content)

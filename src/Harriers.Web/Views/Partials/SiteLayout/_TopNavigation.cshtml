@@ -9,7 +9,7 @@
                 <a href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
                 @if (item.HasChildren)
                 {
-                    <div class="uk-navbar-dropdown">
+                    <div class="uk-navbar-dropdown" uk-dropdown="offset: 0">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             @foreach (var child in item.Items)
                             {

@@ -1,3 +1,16 @@
-﻿$global-link-color: #4fb74e;
-$navbar-background: #fff;
-$global-primary-background: #4fb74e !default;
+﻿$chac-dark-green: #229414;
+$chac-light-green: #4fb74e;
+$chac-secondary-dark: #232923;
+$chac-white: #fff;
+
+$global-link-color: $chac-light-green;
+$global-primary-background: $chac-light-green;
+$global-secondary-background: $chac-secondary-dark;
+$navbar-dropdown-nav-item-color: $chac-dark-green;
+$navbar-background: $chac-white;
+
+$offcanvas-close-position: 25px;
+
+@mixin hook-offcanvas-close() {
+    position: absolute !important;
+}

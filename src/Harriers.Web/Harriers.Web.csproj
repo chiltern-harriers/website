@@ -690,9 +690,10 @@
     <Content Include="Views\master.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Partials\SiteLayout\_SidebarNavigation.cshtml" />
-    <Content Include="Views\Partials\SiteLayout\_Header.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_MainHeader.cshtml" />
     <Content Include="Scripts\uikit\components\.gitkeep" />
     <Content Include="Views\Partials\SiteLayout\_TopNavigation.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_Header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

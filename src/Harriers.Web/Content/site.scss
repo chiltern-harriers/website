@@ -4,8 +4,10 @@
 // 2. Import default variables and available mixins.
 @import "uikit/variables-theme.scss";
 @import "uikit/mixins-theme.scss";
-@import "nav.scss";
 
+@import "nav.scss";
+@import "footer.scss";
+@import "layout.scss";
 
 // 4. Import UIkit.
 @import "uikit/uikit-theme.scss";

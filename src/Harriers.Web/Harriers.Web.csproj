@@ -696,6 +696,7 @@
     <Content Include="Views\Partials\SiteLayout\_TopNavigation.cshtml" />
     <Content Include="Views\Partials\SiteLayout\_Header.cshtml" />
     <Content Include="Views\Partials\SiteLayout\_Footer.cshtml" />
+    <Content Include="Views\GenericPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

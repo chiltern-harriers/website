@@ -6,26 +6,24 @@
 {
     var oneColumn = ((System.Collections.ICollection)Model.sections).Count == 1;
 
-    <div class="umb-grid">
+    <div class="umb-grid" uk-grid>
         @if (oneColumn)
         {
             foreach (var section in Model.sections) {
-                <div class="grid-section">
+                <div>
                     @foreach (var row in section.rows) {
                         @renderRow(row, true);
                     }
                 </div>
             }
         }else {
-            <div class="container">
-                <div class="row clearfix">
+            <div class="uk-container">
+                <div uk-grid>
                     @foreach (var s in Model.sections) {
-                        <div class="grid-section">
-                            <div class="col-md-@s.grid column">
-                                @foreach (var row in s.rows) {
-                                    @renderRow(row, false);
-                                }
-                            </div>
+                        <div class="k-width-1-@s.grid">
+                            @foreach (var row in s.rows) {
+                                @renderRow(row, false);
+                            }
                         </div>
                     }
                 </div>
@@ -36,10 +34,10 @@
 
 @helper renderRow(dynamic row, bool singleColumn){
     <div @RenderElementAttributes(row)>
-        @Html.If(singleColumn, "<div class='container'>")
-        <div class="row clearfix">
+        @Html.If(singleColumn, "<div class='uk-container'>")
+        <div uk-grid>
             @foreach ( var area in row.areas ) {
-            <div class="col-md-@area.grid column">
+            <div class="uk-width-1-@area.grid">
                 <div @RenderElementAttributes(area)>
                     @foreach (var control in area.controls) {
                         if (control !=null && control.editor != null && control.editor.view != null ) {

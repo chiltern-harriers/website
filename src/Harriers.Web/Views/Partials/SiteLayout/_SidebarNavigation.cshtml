@@ -7,11 +7,11 @@
         Navigation
     </h4>
     <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
-        @RenderChildItems(Model)
+        @RenderChildItems(Model, 1)
     </ul>
 </div>
 
-@helper RenderChildItems(List<NavigationListItem> listItems)
+@helper RenderChildItems(List<NavigationListItem> listItems, int level)
 {
     if (listItems != null)
     {
@@ -33,6 +33,17 @@
                                 else
                                 {
                                     <a href="@child.Link.Url">@child.Link.Text</a>
+                                }
+                                @if (child.HasChildren)
+                                {
+                                    <ul class="uk-nav-sub">
+                                        @foreach (var subChild in child.Items)
+                                        {
+                                        <li>
+                                            <a href="@subChild.Link.Url">@subChild.Link.Text</a>
+                                        </li>
+                                        }
+                                    </ul>
                                 }
                             </li>
                         }

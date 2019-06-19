@@ -1,0 +1,23 @@
+﻿@using System.Linq
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<RaceDetails>
+@using Umbraco.Web.PublishedModels
+
+    <div class="uk-card uk-card-default">
+        <div class="uk-card-media-top">
+            <img src="@Model.Image.Url" alt="">
+        </div>
+        <div class="uk-card-body">
+            <div class="uk-card-title">
+                <h3>@Model.EventName</h3>
+                <p class="uk-text-meta uk-margin-remove-top">
+                    @Model.RaceDate
+                </p>
+            </div>
+            @Model.Description
+        </div>
+        <div class="uk-card-footer">
+            <a href="@Model.Link.Url" class="uk-button uk-button-text">
+                Details
+            </a>
+        </div>
+    </div>

@@ -71,20 +71,9 @@ namespace Harriers.Web.Controllers
                 new NavigationListItem(new NavigationLink("/", "Home")));
 
             nav.Add(
-                new NavigationListItem(
-                    new NavigationLink("/About", "About"),
-                        new NavigationListItem(new NavigationLink("/About", "About Us")),
-                        new NavigationListItem(new NavigationLink("/", "Training Times"),
-                            new NavigationListItem(new NavigationLink("/", "Juniors")),
-                            new NavigationListItem(new NavigationLink("/", "Seniors"))),
-                        new NavigationListItem(new NavigationLink("/", "Club Contacts"))));
-
-            nav.Add(
-                new NavigationListItem(new NavigationLink("/", "Membership"),
-                    new NavigationListItem(new NavigationLink("/", "Membership Details")),
-                    new NavigationListItem(new NavigationLink("/", "Club Kit")),
-                    new NavigationListItem(new NavigationLink("/", "Code of Practise")),
-                    new NavigationListItem(new NavigationLink("/", "Offers for the Club"))));
+                new NavigationListItem(new NavigationLink("/", "Club News"),
+                    new NavigationListItem(new NavigationLink("/", "Latest News")),
+                    new NavigationListItem(new NavigationLink("/", "Notices"))));
 
             nav.Add(
                 new NavigationListItem(new NavigationLink("/", "Calendar"),
@@ -101,10 +90,22 @@ namespace Harriers.Web.Controllers
                     new NavigationListItem(new NavigationLink("/", "Pednor 5"))));
 
             nav.Add(
-                new NavigationListItem(new NavigationLink("/", "Club News"),
-                    new NavigationListItem(new NavigationLink("/", "Latest News")),
-                    new NavigationListItem(new NavigationLink("/", "Notices"))));
+                new NavigationListItem(
+                    new NavigationLink("/About", "About"),
+                        new NavigationListItem(new NavigationLink("/About", "About Us")),
+                        new NavigationListItem(new NavigationLink("/", "Training Times"),
+                            new NavigationListItem(new NavigationLink("/", "Juniors")),
+                            new NavigationListItem(new NavigationLink("/", "Seniors"))),
+                        new NavigationListItem(new NavigationLink("/", "Club Contacts"))));
 
+            nav.Add(
+                new NavigationListItem(new NavigationLink("/Membership", "Membership"),
+                    new NavigationListItem(new NavigationLink("/Membership", "Membership Details")),
+                    new NavigationListItem(new NavigationLink("/", "Club Kit")),
+                    new NavigationListItem(new NavigationLink("/", "Code of Practise")),
+                    new NavigationListItem(new NavigationLink("/", "Offers for the Club"))));
+
+            
             return nav;
         }
 

@@ -1,13 +1,16 @@
 ﻿// Theme colours
 $chac-dark-green: #0e6303;
-$chac-light-green: #4fb74e;
-$chac-secondary-dark: #232923;
+$chac-light-green: #118602;
+$chac-secondary-dark: #073801;
 $chac-medium-green: #075a06;
 $chac-white: #fff;
 
+$char-alt-dark: #1d1f2d;
+$char-alt-dark-text: #e4e4e4;
+
 // Overrides for the UIKit colours to set the primary and secondary colours to the CHAC theme
 $global-link-color: $chac-light-green;
-$global-primary-background: $chac-dark-green;
+$global-primary-background: $chac-light-green;
 $global-secondary-background: $chac-secondary-dark;
 
 //$navbar-dropdown-nav-item-color: $chac-dark-green;
@@ -25,7 +28,7 @@ $nav-primary-sublist-item-color: $chac-white;
 $offcanvas-close-position: 25px;
 
 // The colour for the side bar
-$offcanvas-bar-background: $chac-medium-green;
+$offcanvas-bar-background: $chac-secondary-dark;
 
 @mixin hook-offcanvas-close() {
     position: absolute !important;

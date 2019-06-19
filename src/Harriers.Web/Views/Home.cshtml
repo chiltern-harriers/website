@@ -1,4 +1,5 @@
 ﻿@using Umbraco.Web.PublishedModels
+@using System.Linq
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
 
 @{
@@ -9,4 +10,132 @@
     @Html.Partial("SiteLayout/_MainHeader", Model)
 }
 
-@Html.Raw(Model.Content)
+<section class="uk-section uk-section-small">
+    <div class="uk-container uk-container-medium">
+        <h2>The Club</h2>
+        <hr />
+
+        @Html.Raw(Model.Content)
+
+        <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+            <div>
+                <div class="uk-card uk-card-large uk-card-hover uk-card-body uk-dark">
+                    <h3 class="uk-card-title">About</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-large uk-card-hover uk-card-body uk-dark">
+                    <h3 class="uk-card-title">Membership</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@if (Model.Races != null && Model.Races.Any())
+{
+    <section class="uk-section uk-section-small">
+        <div class="uk-container uk-container-medium">
+            <h2>Our Races</h2>
+            <hr />
+            @{
+                var races = Model.Races;
+                int count = Model.Races.Count();
+            }
+            <div class="uk-child-width-1-@(count.ToString() + "@")s uk-grid">
+                @foreach (var race in Model.Races)
+                {
+                <div class="uk-margin-bottom">
+                    @Html.Partial("Components/_Race", race)
+                    
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<section class="uk-section uk-section-small">
+    <div class="uk-container uk-container-medium">
+        <h2>Latest News</h2>
+        <hr />
+        <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                    <div class="uk-card-footer">
+                        <a href="#" class="uk-button uk-button-text">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                    <div class="uk-card-footer">
+                        <a href="#" class="uk-button uk-button-text">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                    <div class="uk-card-footer">
+                        <a href="#" class="uk-button uk-button-text">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                    <div class="uk-card-footer">
+                        <a href="#" class="uk-button uk-button-text">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a uk-link href="/News">More</a>
+    </div>
+</section>

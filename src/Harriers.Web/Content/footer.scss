@@ -1,2 +1,10 @@
 ﻿@import "uikit/variables.scss";
 @import "site-theme.scss";
+
+.ch-footer {
+    background-color: $char-alt-dark;
+
+    * {
+        color: $char-alt-dark-text;
+    }
+}

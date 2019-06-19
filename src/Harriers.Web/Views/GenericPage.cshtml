@@ -7,5 +7,8 @@
 @section Header {
     @Html.Partial("SiteLayout/_Header", Model)
 }
-
-@Html.GetGridHtml(Model, "pageContent")
+<section class="uk-section">
+    <div class="uk-container uk-containr-wide">
+        @Html.GetGridHtml(Model, "pageContent")
+    </div>
+</section>

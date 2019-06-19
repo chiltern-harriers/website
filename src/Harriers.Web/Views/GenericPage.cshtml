@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.GenericPage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+@section Header {
+    @Html.Partial("SiteLayout/_Header", Model)
+}
+
+@Html.GetGridHtml(Model, "pageContent")

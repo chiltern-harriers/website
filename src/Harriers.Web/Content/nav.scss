@@ -1,7 +1,13 @@
 ﻿@import "uikit/variables.scss";
 @import "site-theme.scss";
 
+.ch-navbar-secondary {
+    // Use the brighter variant when there's no image overlay
+    background-color: $chac-light-green !important;
+}
+
 .ch-nav-bar {
+
     .uk-navbar-transparent.uk-light {
         .ch-logo {
             display: none;

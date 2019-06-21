@@ -67,19 +67,9 @@ namespace Harriers.Web.Controllers
         {
             var nav = new List<NavigationListItem>();
 
-            nav.Add(
-                new NavigationListItem(new NavigationLink("/", "Home")));
-
-            nav.Add(
-                new NavigationListItem(new NavigationLink("/", "Club News"),
-                    new NavigationListItem(new NavigationLink("/", "Latest News")),
-                    new NavigationListItem(new NavigationLink("/", "Notices"))));
-
-            nav.Add(
-                new NavigationListItem(new NavigationLink("/", "Calendar"),
-                    new NavigationListItem(new NavigationLink("/", "Race Calendar")),
-                    new NavigationListItem(new NavigationLink("/", "Club Events"))));
-
+            nav.Add(new NavigationListItem(new NavigationLink("/", "Home")));
+            nav.Add(new NavigationListItem(new NavigationLink("/", "Club News")));
+            nav.Add(new NavigationListItem(new NavigationLink("/", "Calendar")));
             nav.Add(
                 new NavigationListItem(new NavigationLink("/", "Events"),
                     new NavigationListItem(new NavigationLink("/", "Cross Country")),

@@ -1,4 +1,6 @@
-﻿body {
+﻿@import "site-theme.scss";
+
+body {
     flex-basis: 100%;
     height: 100vh;
     display: flex;
@@ -7,6 +9,9 @@
 
 .ch-layout {
     flex: 1 1 auto;
+}
+.h-main-content {
+    background: $chac-background-default;
 }
 footer {
     

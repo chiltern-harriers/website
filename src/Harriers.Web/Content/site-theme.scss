@@ -28,7 +28,7 @@ $nav-primary-sublist-item-color: $chac-white;
 $offcanvas-close-position: 25px;
 
 // The colour for the side bar
-$offcanvas-bar-background: $chac-secondary-dark;
+$offcanvas-bar-background: $char-alt-dark;
 
 @mixin hook-offcanvas-close() {
     position: absolute !important;

@@ -697,6 +697,7 @@
     <Content Include="Views\Partials\SiteLayout\_Footer.cshtml" />
     <Content Include="Views\GenericPage.cshtml" />
     <Content Include="Views\Partials\Components\_Race.cshtml" />
+    <Content Include="Views\Partials\Grid\UIKitGrid.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

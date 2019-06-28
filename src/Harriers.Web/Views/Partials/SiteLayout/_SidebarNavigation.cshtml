@@ -26,14 +26,7 @@
                         @foreach (var child in item.Items)
                         {
                             <li>
-                                @if (!string.IsNullOrEmpty(child.Text))
-                                {
-                                    @child.Text
-                                }
-                                else
-                                {
-                                    <a href="@child.Link.Url">@child.Link.Text</a>
-                                }
+                                <a href="@child.Link.Url">@child.Link.Text</a>
                                 @if (child.HasChildren)
                                 {
                                     <ul class="uk-nav-sub">
@@ -50,16 +43,10 @@
                     </ul>
                 </li>
             }
-            else if (!string.IsNullOrEmpty(item.Text))
-            {
-                <li class="uk-nav-header">
-                    @item.Text
-                </li>
-            }
             else if (item.Link != null)
             {
                 <li class="uk-nav-header">
-                    <a href="@item.Link.Url" target="@item.Link.Target">@item.Link.Text</a>
+                    <a href="@item.Link.Url">@item.Link.Text</a>
                 </li>
             }
         }

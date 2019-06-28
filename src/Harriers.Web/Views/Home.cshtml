@@ -10,53 +10,52 @@
     @Html.Partial("SiteLayout/_MainHeader", Model)
 }
 
-<section class="uk-section uk-section-small">
-    <div class="uk-container uk-container-medium">
+<section class="uk-grid-collapse" uk-grid>
+    <div class="uk-padding uk-background-default">
         <h2>The Club</h2>
         <hr />
-
         @Html.Raw(Model.Content)
+    </div>
+</section>
 
-        <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-            <div>
-                <div class="uk-card uk-card-default uk-card-large uk-card-hover uk-card-body uk-dark">
-                    <h3 class="uk-card-title">About</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-large uk-card-hover uk-card-body uk-dark">
-                    <h3 class="uk-card-title">Join</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
+<section class="uk-grid-collapse uk-child-width-expand@m" uk-grid>
+    <div>
+        <div class="uk-background-muted uk-padding">
+            <h3 class="uk-card-title">Join</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-background-secondary uk-padding uk-light">
+            <h3 class="uk-card-title">Training</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
     </div>
 </section>
 
 
-@if (Model.Races != null && Model.Races.Any())
+@*@if (Model.Races != null && Model.Races.Any())
 {
-    <section class="uk-section uk-section-small">
-        <div class="uk-container uk-container-medium">
+    <section class="uk-background-default uk-dark">
+        <div class="uk-padding">
             <h2>Our Races</h2>
             <hr />
-            @{
-                var races = Model.Races;
-                int count = Model.Races.Count();
-            }
-            <div class="uk-child-width-1-@(count.ToString() + "@")s uk-grid">
-                @foreach (var race in Model.Races)
-                {
-                <div class="uk-margin-bottom">
-                    @Html.Partial("Components/_Race", race)
-                    
-                </div>
-                }
+        </div>
+        <div class="uk-grid-collapse uk-grid-match" uk-grid>
+        @{
+            var races = Model.Races;
+            int count = Model.Races.Count();
+        }
+        @foreach (var race in Model.Races)
+        {
+            <div class="uk-width-expand@m uk-margin-bottom uk-grid-match">
+                @Html.Partial("Components/_Race", race)
+                
             </div>
+        }
         </div>
     </section>
-}
+}*@
 
 <section class="uk-section uk-section-small">
     <div class="uk-container uk-container-medium">

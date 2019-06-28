@@ -1,10 +1,12 @@
-﻿@using System.Linq
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+@using Umbraco.Web.PublishedModels
+@using System.Linq
 @using System
 
 @{
     // Pick a random image to show as the banner on the home page
     // 1. Get the banners collection from the home page model
-    var banners = Model.BannerImages;
+    var banners = Model.BannerImages.ToList();
     
     // 2. Based on the number of images in the collection, pick a random index
     var bannerIndex = new Random((int)DateTime.Now.Ticks).Next(0, banners.Count);
@@ -50,21 +52,7 @@
 
                     </div>
                     <div class="uk-navbar-right uk-margin-small-right">
-                        <ul class="uk-iconnav h-social-icons">
-                            <li>
-                                <a title="twitter" href="https://twitter.com/ChilternHarrier" uk-icon="icon: twitter"></a>
-                            </li>
-                            <li>
-                                <a title="instagram" href="https://www.instagram.com/chilternharriers/" uk-icon="icon: instagram"></a>
-                            </li>
-                            <li>
-                                <a title="facebook" href="https://www.facebook.com/groups/ChilternHarriersAC/" uk-icon="icon: facebook"></a>
-                            </li>
-                            <li>
-                                <a title="strava" href="https://www.strava.com/clubs/123015" uk-icon="icon: strava"></a>
-                            </li>
-                            
-                        </ul>
+                        @{Html.RenderAction("SocialLinksPartial", "SiteLayout");}
                     </div>
                 </div>
                 <div class="uk-visible@m">

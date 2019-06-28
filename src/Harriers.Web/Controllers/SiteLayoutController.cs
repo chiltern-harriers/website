@@ -6,12 +6,16 @@ using Umbraco.Web.Mvc;
 using System.Runtime.Caching;
 using Harriers.Web.Models.Navigation;
 using Umbraco.Core.Models.PublishedContent;
+using Harriers.Web.Services;
+using Harriers.Web.Models.SiteConfiguration;
 
 namespace Harriers.Web.Controllers
 {
     public class SiteLayoutController : SurfaceController
     {
         public const string VIEW_FOLDER_PATH = "~/Views/Partials/SiteLayout/";
+
+        private readonly SiteConfigurationService siteConfigurationService = new SiteConfigurationService();
 
         /// <summary>
         /// Renders the sidebar navigation partial
@@ -20,11 +24,23 @@ namespace Harriers.Web.Controllers
         public ActionResult SidebarNavigation()
         {
             List<NavigationListItem> nav = GetObjectFromCache<List<NavigationListItem>>(
-                "mainNav", 
+                "mainNav",
                 5,
                 GetHardCodedList);
 
             return PartialView(VIEW_FOLDER_PATH + "_SidebarNavigation.cshtml", nav);
+        }
+
+        public ActionResult SocialLinksPartial(bool includeNames = false)
+        {
+            WebsiteConfiguration configuration = siteConfigurationService.GetWebsiteConfiguration(this.Umbraco);
+            SocialMediaLinkViewModel model = new SocialMediaLinkViewModel
+            {
+                IncludeName = includeNames,
+                Links = configuration.SocialMedia
+            };
+
+            return PartialView(VIEW_FOLDER_PATH + "_SocialLinks.cshtml", model);
         }
 
         /// <summary>
@@ -95,7 +111,7 @@ namespace Harriers.Web.Controllers
                     new NavigationListItem(new NavigationLink("/", "Code of Practise")),
                     new NavigationListItem(new NavigationLink("/", "Offers for the Club"))));
 
-            
+
             return nav;
         }
 
@@ -120,7 +136,7 @@ namespace Harriers.Web.Controllers
                 List<NavigationListItem> childPages = GetChildNavigationList(homePage);
                 if (childPages != null && childPages.Any())
                     nav.AddRange(GetChildNavigationList(homePage));
-            }            
+            }
 
             return nav;
         }

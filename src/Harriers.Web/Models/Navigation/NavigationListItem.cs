@@ -20,23 +20,18 @@ namespace Harriers.Web.Models.Navigation
             this.Items = new List<NavigationListItem>(children);
         }
 
-        public NavigationListItem(string text)
-        {
-            Text = text;
-        }
-
-        public NavigationListItem(string text, params NavigationListItem[] children)
-        {
-            Text = text;
-            this.Items = new List<NavigationListItem>(children);
-        }
-
-        public string Text { get; set; }
-
         public NavigationLink Link { get; set; }
+
+        public bool Active { get; set; }
 
         public List<NavigationListItem> Items { get; set; }
 
-        public bool HasChildren { get { return Items != null && Items.Any(); } }
+        public bool HasChildren
+        {
+            get
+            {
+                return Items != null && Items.Any();
+            }
+        }
     }
 }

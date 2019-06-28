@@ -20,7 +20,7 @@
     <RootNamespace>Harriers.Web</RootNamespace>
     <AssemblyName>Harriers.Web</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -420,6 +420,10 @@
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.0.1\lib\net472\Umbraco.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Umbraco.Web.PublishedModels, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Umbraco.Web.PublishedModels.dll</HintPath>
+    </Reference>
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.0.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
@@ -653,7 +657,11 @@
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Models\Navigation\NavigationLink.cs" />
     <Compile Include="Models\Navigation\NavigationListItem.cs" />
+    <Compile Include="Models\SiteConfiguration\SocialMediaLink.cs" />
+    <Compile Include="Models\SiteConfiguration\SocialMediaLinkViewModel.cs" />
+    <Compile Include="Models\SiteConfiguration\WebsiteConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SiteConfigurationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />
@@ -698,6 +706,7 @@
     <Content Include="Views\GenericPage.cshtml" />
     <Content Include="Views\Partials\Components\_Race.cshtml" />
     <Content Include="Views\Partials\Grid\UIKitGrid.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_SocialLinks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -734,7 +743,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54822</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54822/</IISUrl>
+          <IISUrl>https://chiltern.dev.local</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

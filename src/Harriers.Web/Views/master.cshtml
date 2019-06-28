@@ -6,7 +6,7 @@
 @{
 	Layout = null;
 	
-	var navigation = Model as INavigationBase;
+	var navigation = Model as IPageDetails;
 }
 
 <!doctype html>
@@ -15,21 +15,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="@navigation.Description">
+        <meta name="description" content="@navigation.PageDescription">
         <link rel="stylesheet" href="/css/main.css">
-        
-        @if (navigation.Keywords.Any()) {
-            <meta name="keywords" content="@navigation.Keywords.Aggregate((a, b) => a + "," + b)">
-        }
-        
-        <title>Chiltern Harriers : @navigation.Title</title>
+        <title>@navigation.PageTitle</title>
         @Styles.Render("~/bundles/styles")
         @Scripts.Render("~/bundles/scripts")
         @RenderSection("Head", false)
     </head>
     <body>
         <div class="ch-layout">
-
             @RenderSection("Header", false)
 
             <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>

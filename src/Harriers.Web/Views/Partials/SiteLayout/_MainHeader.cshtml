@@ -1,34 +1,30 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
 @using Umbraco.Web.PublishedModels
 @using System.Linq
-@using System
+@using Newtonsoft.Json
 
 @{
-    // Pick a random image to show as the banner on the home page
-    // 1. Get the banners collection from the home page model
-    var banners = Model.BannerImages.ToList();
-    
-    // 2. Based on the number of images in the collection, pick a random index
-    var bannerIndex = new Random((int)DateTime.Now.Ticks).Next(0, banners.Count);
-    
-    // 3. Set the banner to use based on the random index
-    var banner = banners[bannerIndex];
-    
+    // Serialize the banner images to an array of URL's that can be used in a script to switch out the background image
+    // on a timer
+    string bannerUrlsJson = JsonConvert.SerializeObject(Model.BannerImages.Select(b => b.Url).ToArray());
+    string initialBannerUrl = Model.BannerImages.First().Url;
+
     // Define the classes to be added to the top level nav bar
     var headerClasses = new string[] {
         "ch-nav-bar",
         "uk-section-primary",
+        "ch-navbar-secondary",
         "uk-preserve-color",
         "uk-background-blend-soft-light",
         "uk-background-cover",
         "uk-background-center-center",
         "uk-height-extra-large"
     };
-    
-    var headerClass = headerClasses.Aggregate((a, b) => $"{a} {b}");
+
+    string headerClass = headerClasses.Aggregate((a, b) => $"{a} {b}");
 }
 
-<div class="@headerClass" style="background-image: url(@(banner.Url))">
+<div id="main-nav-container" class="@headerClass" style="background-image: url(@(initialBannerUrl))">
     <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
         <div class="uk-navbar-container">
             <div class="uk-container uk-container-expand">
@@ -48,7 +44,7 @@
                             <img src="Content/images/logo-inverse.svg" class="uk-visible@s uk-margin-small-right" width="50" height="50" />
                         </a>
 
-                        <span ch-navbar-brand">Chiltern Harriers <span class="uk-hidden@s">A.C.</span></span>                       
+                        <span ch-navbar-brand">Chiltern Harriers <span class="uk-hidden@s">A.C.</span></span>
 
                     </div>
                     <div class="uk-navbar-right uk-margin-small-right">
@@ -74,3 +70,17 @@
         @{Html.RenderAction("SidebarNavigation", "SiteLayout");}
     </div>
 </div>
+
+<script>
+    // Switches out the bckground image on a timer
+    var images = @Html.Raw(bannerUrlsJson);
+    var index = -1;
+    var mainNavContainer = document.querySelector('#main-nav-container');
+    setInterval(function () {
+        index++;
+        if (index >= images.length) {
+            index = 0;
+        }
+        mainNavContainer.style.backgroundImage = 'url(' + images[index] + ')';
+    }, 5000);
+</script>

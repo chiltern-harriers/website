@@ -441,6 +441,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\FaLinksPropertyEditor\css\falinks.style.css" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\faicon.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.picker.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.prevalues.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\falinks.propertyeditor.html" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\faicon.propertyeditor.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.picker.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.prevalues.controller.js" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\js\falinks.propertyeditor.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -683,6 +692,10 @@
     <Content Include="Content\site-theme.scss" />
     <Content Include="Content\footer.scss" />
     <Content Include="Content\layout.scss" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\icons.json" />
+    <Content Include="App_Plugins\FaLinksPropertyEditor\package.manifest" />
+    <Content Include="App_Data\packages\installedPackages.config" />
+    <Content Include="App_Data\packages\createdPackages.config" />
     <None Include="Content\site.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />

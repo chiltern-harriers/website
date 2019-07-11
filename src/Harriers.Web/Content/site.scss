@@ -1,10 +1,15 @@
 ﻿// Import only what you need from Bulma
 @import "./bulma/utilities/_all.sass";
 @import "./bulma/base/_all.sass";
-@import "./bulma/elements/button.sass";
-@import "./bulma/elements/container.sass";
-@import "./bulma/elements/title.sass";
+@import "./bulma/layout/_all.sass";
+@import "./bulma/elements/_all.sass";
 @import "./bulma/form/_all.sass";
-@import "./bulma/components/navbar.sass";
-@import "./bulma/layout/hero.sass";
-@import "./bulma/layout/section.sass";
+@import "./bulma/grid/_all.sass";
+@import "./bulma/components/_all.sass";
+
+
+@import "./partials/colours.scss";
+@import "./partials/animations.scss";
+@import "./partials/sidebar.scss";
+@import "./partials/navbar.scss";
+@import "./partials/utilities.scss";

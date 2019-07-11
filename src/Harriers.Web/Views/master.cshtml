@@ -25,19 +25,12 @@
     @RenderSection("Head", false)
 </head>
 <body>
-    <div class="ch-layout">
-        @RenderSection("Header", false)
-        @Html.Partial("~/Views/Partials/NavSection.cshtml", appSettings)
-        <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
+    @Html.Partial("~/Views/Partials/NavSection.cshtml", appSettings)
 
-        <main class="h-main-content uk-position-relative">
-            @RenderBody()
-        </main>
-    </div>
+    <main>
+        @RenderBody()
+    </main>
     @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", appSettings.NestedFooter)
-    @*<footer>
-        @Html.Partial("SiteLayout/_Footer")
-    </footer>*@
 </body>
 </html>
 

@@ -1,11 +1,11 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<LinksList>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<LinksListSection>
 @using Umbraco.Web.PublishedModels
 @using Harriers.Web.Extensions
 
-@SectionHelper.RenderSectionStart(Model.BackgroundColor.Label)
+@SectionHelper.RenderSectionStart(Model.BackgroundColour.Label)
 @foreach (var linksList in Model.Links)
 {
-    <div class="column has-no-background @RazorHelper.ColumnClass(Model.ItemsPerRow?.ToString())">
+    <div class="column has-no-background @RazorHelper.ColumnClass(Model.ItemsPerRow.ToString())">
         @Html.Partial($"~/Views/Partials/Nested/Item/LinksList.cshtml", linksList)
     </div>
 }

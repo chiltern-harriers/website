@@ -4,38 +4,41 @@
 @using System.Web.Optimization
 
 @{
-	Layout = null;
-	
-	var navigation = Model as IPageDetails;
+    Layout = null;
+
+    var navigation = Model as IPageDetails;
+    var home = (Home)Model.Root();
+    var appSettings = home.Children<WebsiteConfiguration>().FirstOrDefault();
 }
 
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="@navigation.PageDescription">
-        <link rel="stylesheet" href="/css/main.css">
-        <title>@navigation.PageTitle</title>
-        @Styles.Render("~/bundles/styles")
-        @Scripts.Render("~/bundles/scripts")
-        @RenderSection("Head", false)
-    </head>
-    <body>
-        <div class="ch-layout">
-            @RenderSection("Header", false)
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="@navigation.PageDescription">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>@navigation.PageTitle</title>
+    @Styles.Render("~/bundles/styles")
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("Head", false)
+</head>
+<body>
+    <div class="ch-layout">
+        @RenderSection("Header", false)
+        @Html.Partial("~/Views/Partials/NavSection.cshtml", appSettings)
+        <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
 
-            <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;" hidden=""></div>
-
-            <main class="h-main-content uk-position-relative">
-                @RenderBody()
-            </main>
-        </div>
-        <footer>
-            @Html.Partial("SiteLayout/_Footer")
-        </footer>
-    </body>
+        <main class="h-main-content uk-position-relative">
+            @RenderBody()
+        </main>
+    </div>
+    @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", appSettings.NestedFooter)
+    @*<footer>
+        @Html.Partial("SiteLayout/_Footer")
+    </footer>*@
+</body>
 </html>
 
 

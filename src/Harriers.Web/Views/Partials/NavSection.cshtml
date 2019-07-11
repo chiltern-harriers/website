@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.PublishedModels.WebsiteConfiguration>
+@using Harriers.Web.Extensions
+
+<nav id="navbarMain" class="navbar has-shadow is-spaced" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            @if (Model.BrandLogo.HasValue())
+            {
+                var brandLink = Model.BrandLogo.FirstOrDefault();
+                <a class="navbar-item " href="@brandLink.Link.Url">
+                    <span class="icon is-large is-circle">
+                        <i class="@brandLink.ClassName has-text-primary fa-lg"></i>
+                    </span>&nbsp;
+                    @brandLink.Link.Name
+                </a>
+            }
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                @if (Model.LeftNav != null)
+                {
+                    foreach (var item in Model.LeftNav)
+                    {
+                        if (item.Link != null)
+                        {
+                            <a class="navbar-item" href="@item.Link.Url">
+                                @if (item.ClassName.HasValue())
+                                {
+                                    <span class="icon has-text-link">
+                                        <i class="@item.ClassName"></i>
+                                    </span>@:&nbsp;
+                                }
+                                @item.Link.Name
+                            </a>
+                        }
+                    }
+                }
+            </div>
+            <div class="navbar-end">
+                @if (Model.RightNav != null)
+                {
+                    foreach (var socialLink in Model.RightNav)
+                    {
+                        <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="@socialLink.Link.Url" target="@socialLink.Link.Target">
+                            <span class="icon @socialLink.PrimaryClass">
+                                <i class="@socialLink.ClassName fa-lg"></i>
+                            </span>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</nav>

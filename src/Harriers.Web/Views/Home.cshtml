@@ -6,11 +6,13 @@
     Layout = "master.cshtml";
 }
 
-@section Header {
+@*@section Header {
     @Html.Partial("SiteLayout/_MainHeader", Model)
-}
+}*@
 
-<section class="uk-grid-collapse" uk-grid>
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContent)
+
+@*<section class="uk-grid-collapse" uk-grid>
     <div class="uk-padding uk-background-default">
         <h2>The Club</h2>
         <hr />
@@ -31,33 +33,33 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
     </div>
-</section>
+</section>*@
 
 
 @*@if (Model.Races != null && Model.Races.Any())
-{
-    <section class="uk-background-default uk-dark">
-        <div class="uk-padding">
-            <h2>Our Races</h2>
-            <hr />
-        </div>
-        <div class="uk-grid-collapse uk-grid-match" uk-grid>
-        @{
-            var races = Model.Races;
-            int count = Model.Races.Count();
-        }
-        @foreach (var race in Model.Races)
-        {
-            <div class="uk-width-expand@m uk-margin-bottom uk-grid-match">
-                @Html.Partial("Components/_Race", race)
-                
+    {
+        <section class="uk-background-default uk-dark">
+            <div class="uk-padding">
+                <h2>Our Races</h2>
+                <hr />
             </div>
-        }
-        </div>
-    </section>
-}*@
+            <div class="uk-grid-collapse uk-grid-match" uk-grid>
+            @{
+                var races = Model.Races;
+                int count = Model.Races.Count();
+            }
+            @foreach (var race in Model.Races)
+            {
+                <div class="uk-width-expand@m uk-margin-bottom uk-grid-match">
+                    @Html.Partial("Components/_Race", race)
 
-<section class="uk-section uk-section-small">
+                </div>
+            }
+            </div>
+        </section>
+    }*@
+
+@*<section class="uk-section uk-section-small">
     <div class="uk-container uk-container-medium">
         <h2>Latest News</h2>
         <hr />
@@ -137,4 +139,4 @@
         </div>
         <a uk-link href="/News">More</a>
     </div>
-</section>
+</section>*@

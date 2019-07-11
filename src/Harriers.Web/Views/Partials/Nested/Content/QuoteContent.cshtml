@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<QuoteContent>
+@using Umbraco.Web.PublishedModels
+@using Harriers.Web.Extensions
+
+@if (Model.Quote.HasValue())
+{
+    <div class="has-large-spacing-top has-large-spacing-bottom">
+        <blockquote class="is-size-4">
+            @Model.Quote
+        </blockquote>
+    </div>
+}

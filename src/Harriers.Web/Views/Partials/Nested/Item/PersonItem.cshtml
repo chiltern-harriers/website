@@ -1,0 +1,37 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Person>
+@using Umbraco.Web.PublishedModels
+@using Harriers.Web.Extensions
+
+<div class="has-equal-height has-no-background ">
+    <div class="is-60-percent has-margin-auto has-spacing-bottom">
+        <figure class="image is-square is-circle">
+            @if (Model.Photo.HasValue())
+            {
+                @RazorHelper.ResponsiveImage(Model.Photo.FirstOrDefault(), Model.Name, "is-background is-rounded")
+            }
+        </figure>
+    </div>
+    <div class="content has-text-centered is-85-percent has-margin-auto has-large-spacing-bottom">
+        <h4 class="title has-small-spacing-bottom is-size-4">@Model.Name</h4>
+        @if (Model.Bio.HasValue())
+        {
+            @Model.Bio
+        }
+        <div class="buttons is-centered">
+            @if (Model.Email.HasValue())
+            {
+                @RenderSocialLink($"mailto:{Model.Email}", "fas fa-envelope", Model.Email)
+            }
+        </div>
+    </div>
+</div>
+
+@helper RenderSocialLink(string href, string iconClass, string value)
+{
+    <a href="@href" target="_blank" class="button is-outlined is-link has-icons-left">
+        <span class="icon">
+            <i class="@iconClass"></i>
+        </span>
+        <span class="icon-text">@value</span>
+    </a>
+}

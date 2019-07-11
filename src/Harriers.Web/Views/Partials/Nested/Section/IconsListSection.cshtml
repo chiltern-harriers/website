@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IconsListSection>
+@using Umbraco.Web.PublishedModels
+@using Harriers.Web.Extensions
+@using System.Linq
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColour.Label, className: "icon-section")
+    @foreach (var icon in Model.Icons)
+    {
+        <div class="column has-no-background has-large-spacing-bottom @RazorHelper.ColumnClass(Model.ItemsPerRow.ToString())">
+            @Html.Partial($"~/Views/Partials/Nested/Item/IconItem.cshtml", icon)
+        </div>
+    }
+@SectionHelper.RenderSectionEnd()

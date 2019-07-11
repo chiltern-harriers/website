@@ -1,0 +1,16 @@
+﻿@using Harriers.Web.Extensions
+@using Umbraco.Web.PublishedModels
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IEnumerable<IPublishedElement>>
+
+@{
+    if (Model.HasValue())
+    {
+        foreach (var rowContent in Model)
+        {
+            @Html.Partial($"~/Views/Partials/Nested/Section/{rowContent.ContentType.Alias}.cshtml", rowContent)
+        }
+    }
+}
+
+
+

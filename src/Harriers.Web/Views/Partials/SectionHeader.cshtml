@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.PublishedModels.HeaderSection>
+@using Harriers.Web.Extensions;
+
+@if (Model.HeaderTitle.HasValue())
+{
+    <section class="hero is-dark">
+        <div class="hero-body">
+            <div class="container">
+                <div class="column is-two-thirds-tablet is-paddingless">
+                    <h1 class="title">@Model.HeaderTitle</h1>
+                    @if (Model.HeaderSubtitle.HasValue())
+                    {
+                        <h2 class="subtitle">@Model.HeaderSubtitle</h2>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}

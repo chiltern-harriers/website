@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BannerStripSection>
+@using Umbraco.Web.PublishedModels
+@using Harriers.Web.Extensions
+
+<section class="section hero @RazorHelper.BackgroundColorClass(Model.BackgroundColour.Label.ToString()) is-spaced hero-footer">
+    <div class="container has-no-background">
+        @if (Model.Title.HasValue())
+        {
+            <h2 class="title is-size-3 is-size-2-tablet">@Model.Title</h2>
+        }
+        @if (Model.Content.HasValue())
+        {
+            <div class="subtitle is-size-5 is-size-4-tablet">@Model.Content</div>
+        }
+        @if (Model.Link.HasValue())
+        {
+            <a class="button is-outlined is-link is-medium" target="@Model.Link.Target" href="@Model.Link.Url">
+                @Model.Link.Name
+            </a>
+        }
+    </div>
+</section>

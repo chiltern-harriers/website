@@ -25,6 +25,7 @@ namespace Harriers.Web.Components
             bundles.Add(new CustomStyleBundle("~/bundles/styles")
                 .Include(
                     "~/Content/site.scss",
+                    "~/Content/fontawesome/css/all.css",
                     "~/Content/fonts.css"));
 
             bundles.Add(new CustomScriptBundle("~/bundles/scripts")

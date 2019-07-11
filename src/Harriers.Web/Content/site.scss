@@ -1,13 +1,10 @@
-﻿// 1. Your custom variables and variable overwrites.
-@import "site-theme.scss";
-
-// 2. Import default variables and available mixins.
-@import "uikit/variables-theme.scss";
-@import "uikit/mixins-theme.scss";
-
-@import "nav.scss";
-@import "footer.scss";
-@import "layout.scss";
-
-// 4. Import UIkit.
-@import "uikit/uikit-theme.scss";
+﻿// Import only what you need from Bulma
+@import "./bulma/utilities/_all.sass";
+@import "./bulma/base/_all.sass";
+@import "./bulma/elements/button.sass";
+@import "./bulma/elements/container.sass";
+@import "./bulma/elements/title.sass";
+@import "./bulma/form/_all.sass";
+@import "./bulma/components/navbar.sass";
+@import "./bulma/layout/hero.sass";
+@import "./bulma/layout/section.sass";

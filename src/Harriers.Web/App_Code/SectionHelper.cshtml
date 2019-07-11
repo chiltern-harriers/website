@@ -6,7 +6,7 @@
 
 @helper RenderSectionStart(string backgroundColorClass = "", bool isFullWidth = false, bool isCentered = false, string className ="")
 {
-    @:<section class="section is-medium @className @(isFullWidth ? "is-full-width" : "") @RazorHelper.BackgroundColorClass(backgroundColorClass)">
+    @:<section class="section is-small @className @(isFullWidth ? "is-full-width" : "") @RazorHelper.BackgroundColorClass(backgroundColorClass)">
     @:<div class="container">
     @:<div class="columns is-multiline @(isCentered ? "is-centered" : "")">
 }

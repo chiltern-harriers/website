@@ -6,7 +6,7 @@
 @{
     Layout = null;
 
-    var navigation = Model as IPageDetails;
+    var navigation = Model as INavigationBase;
     var home = (Home)Model.Root();
     var appSettings = home.Children<WebsiteConfiguration>().FirstOrDefault();
 }
@@ -17,15 +17,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="@navigation.PageDescription">
+    <meta name="description" content="@navigation.Description">
     <link rel="stylesheet" href="/css/main.css">
-    <title>@navigation.PageTitle</title>
+    <title>@navigation.Title</title>
     @Styles.Render("~/bundles/styles")
     @Scripts.Render("~/bundles/scripts")
     @RenderSection("Head", false)
 </head>
 <body>
-    @Html.Partial("~/Views/Partials/NavSection.cshtml", appSettings)
+    @Html.Partial("~/Views/Partials/Components/Navbar.cshtml", appSettings)
 
     <main>
         @RenderBody()

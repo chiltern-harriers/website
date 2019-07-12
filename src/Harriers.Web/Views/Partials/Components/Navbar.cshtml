@@ -8,7 +8,7 @@
             {
                 var brandLink = Model.BrandLogo.FirstOrDefault();
                 <a class="navbar-item " href="@brandLink.Link.Url">
-                    <span class="icon is-large is-circle">
+                    <span class="icon">
                         <i class="@brandLink.ClassName has-text-primary fa-lg"></i>
                     </span>&nbsp;
                     @brandLink.Link.Name

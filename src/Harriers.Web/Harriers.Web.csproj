@@ -2064,6 +2064,7 @@
     <Content Include="Content\images\logo-inverse.svg" />
     <Content Include="Content\images\logo.svg" />
     <Content Include="Content\images\logo.jpg" />
+    <Content Include="Content\fonts.css" />
     <Content Include="Content\site.css" />
     <Content Include="css\main.css" />
     <Content Include="css\wysiwyg.css" />
@@ -2078,7 +2079,7 @@
     <Content Include="Content\fonts\open-sans\OpenSans-Semibold-webfont.ttf" />
     <Content Include="Content\fonts\open-sans\OpenSans-Semibold-webfont.woff" />
     <Content Include="Content\partials\sidebar.scss" />
-    <Content Include="Content\partials\colours.scss" />
+    <Content Include="Content\partials\variables.scss" />
     <Content Include="Content\partials\animations.scss" />
     <Content Include="Content\partials\navbar.scss" />
     <Content Include="Content\fontawesome\metadata\categories.yml" />

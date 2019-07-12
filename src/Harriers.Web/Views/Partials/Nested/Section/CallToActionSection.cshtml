@@ -4,8 +4,8 @@
     
 
 @SectionHelper.RenderSectionStart(Model.BackgroundColour.Label, true)
-<div class="columns is-centered has-margin-auto">
-    <div class="column has-no-background is-two-thirds has-text-centered">
+<div class="columns is-centered has-margin-auto has-spacing-bottom has-spacing-top">
+    <div class="has-no-background is-two-thirds">
         @if (Model.Title.HasValue())
         {
             <h2 class="title is-size-3 is-size-1-tablet">@Model.Title</h2>
@@ -14,7 +14,7 @@
         {
             <div class="subtitle is-size-5 is-size-4-tablet">@Model.Content</div>
         }
-        @if (Model.Link.HasValue())
+        @if (Model.Link != null)
         {
             @RazorHelper.RenderFaLink(Model.Link, classList: "button is-link is-medium")
         }

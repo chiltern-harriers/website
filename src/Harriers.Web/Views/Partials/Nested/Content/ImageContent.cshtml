@@ -57,13 +57,13 @@
      {
          <h3 class="title is-size-4">@Model.Title</h3>
      }
-     if (Model.SubTitle.HasValue())
+     if (Model.Subtitle.HasValue())
      {
          <p class="subtitle is-size-5">
-             @Model.SubTitle
+             @Model.Subtitle
          </p>
      }
-     if (Model.Link.HasValue())
+     if (Model.Link != null)
      {
         @RazorHelper.RenderFaLink(Model.Link, classList:"button is-link is-medium")
      }

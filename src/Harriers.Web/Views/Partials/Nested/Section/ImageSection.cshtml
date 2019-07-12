@@ -3,38 +3,38 @@
 @using Harriers.Web.Extensions
 
 
-@SectionHelper.RenderContentSectionStart(Model.BackgroundColour.Label, isFullWidth:true, className: "image-section is-paddingless")
+@SectionHelper.RenderContentSectionStart(Model.BackgroundColour.Label, isFullWidth: true, className: "image-section is-paddingless")
 @if (Model.ImageAlignment == "Left" || Model.ImageAlignment == "Right")
 {
-            if (Model.ImageAlignment == "Left")
-            {
-                
-                <div class="column">
-                    @RenderImage()
-                </div>
-            }
-            else
-            {
-                <div class="column is-hidden-mobile">
-                    @RenderImageText()
-                </div>
-            }
+    if (Model.ImageAlignment == "Left")
+    {
 
         <div class="column">
-            @if (Model.ImageAlignment == "Left")
-            {
+            @RenderImage()
+        </div>
+    }
+    else
+    {
+        <div class="column is-hidden-mobile">
+            @RenderImageText()
+        </div>
+    }
+
+    <div class="column">
+        @if (Model.ImageAlignment == "Left")
+        {
+            @RenderImageText()
+        }
+        else
+        {
+            @RenderImage()
+            <div class="is-hidden-tablet">
                 @RenderImageText()
-            }
-            else
-            {
-                @RenderImage()
-                <div class="is-hidden-tablet">
-                    @RenderImageText()
-                </div>
-            }
-        </div>}
+            </div>
+        }
+    </div>}
 else
-{   
+{
     <div class="column image-full">
         @RenderImage()
         @RenderImageText()
@@ -62,13 +62,13 @@ else
             {
                 <h3 class="title is-size-3 is-size-2-tablet">@Model.Title</h3>
             }
-            @if (Model.SubTitle.HasValue())
+            @if (Model.Subtitle.HasValue())
             {
                 <div class="subtitle is-size-5 is-size-4-tablet">
-                    @Model.SubTitle
+                    @Model.Subtitle
                 </div>
             }
-            @if (Model.Link.HasValue())
+            @if (Model.Link != null)
             {
                 @RazorHelper.RenderFaLink(Model.Link, classList: "button is-link is-medium")
             }

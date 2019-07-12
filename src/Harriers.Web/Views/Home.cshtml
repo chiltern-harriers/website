@@ -1,8 +1,37 @@
-﻿@using Umbraco.Web.PublishedModels
-@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+@using System.Linq
+@using Umbraco.Web.PublishedModels
+@using System.Web.Optimization
 
 @{
-    Layout = "master.cshtml";
+    Layout = null;
+
+    var navigation = Model as INavigationBase;
+    var home = (Home)Model.Root();
+    var appSettings = home.Children<WebsiteConfiguration>().FirstOrDefault();
 }
 
-@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContent)
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="@navigation.Description">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>@navigation.Title</title>
+    @Styles.Render("~/bundles/styles")
+    @Scripts.Render("~/bundles/scripts")
+</head>
+<body>
+    @Html.Partial("~/Views/Partials/Components/NavbarHome.cshtml", appSettings)
+
+    <main>
+        @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.NestedContent)
+    </main>
+    @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", appSettings.NestedFooter)
+</body>
+</html>
+
+
+

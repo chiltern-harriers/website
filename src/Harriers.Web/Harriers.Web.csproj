@@ -2130,7 +2130,6 @@
   <ItemGroup>
     <Compile Include="Components\BundlingComponent.cs" />
     <Compile Include="Components\ComponentComposer.cs" />
-    <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Extensions\CharExtensions.cs" />
     <Compile Include="Extensions\DateExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
@@ -2235,15 +2234,9 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\master.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <Content Include="Views\Partials\SiteLayout\_SidebarNavigation.cshtml" />
-    <Content Include="Views\Partials\SiteLayout\_MainHeader.cshtml" />
-    <Content Include="Views\Partials\SiteLayout\_TopNavigation.cshtml" />
-    <Content Include="Views\Partials\SiteLayout\_Header.cshtml" />
-    <Content Include="Views\Partials\SiteLayout\_Footer.cshtml" />
     <Content Include="Views\GenericPage.cshtml" />
     <Content Include="Views\Partials\Components\_Race.cshtml" />
     <Content Include="Views\Partials\Grid\UIKitGrid.cshtml" />
-    <Content Include="Views\Partials\SiteLayout\_SocialLinks.cshtml" />
     <Content Include="Views\Partials\Nested\Content\CallToActionSection.cshtml" />
     <Content Include="Views\Partials\Nested\Content\IconsListSection.cshtml" />
     <Content Include="Views\Partials\Nested\Content\ImageContent.cshtml" />
@@ -2275,6 +2268,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Partials\Components\Navbar.cshtml" />
     <Content Include="Views\Partials\Components\NavbarClone.cshtml" />
+    <Content Include="Views\ContentPage.cshtml" />
+    <Content Include="Views\OurRaces.cshtml" />
+    <Content Include="Views\People.cshtml" />
+    <Content Include="Views\Person.cshtml" />
+    <Content Include="Views\RaceDetails.cshtml" />
+    <Content Include="Views\RaceListPage.cshtml" />
+    <Content Include="Views\RacePage.cshtml" />
+    <Content Include="Views\RaceResultsPage.cshtml" />
+    <Content Include="Views\Races.cshtml" />
+    <Content Include="Views\Article.cshtml" />
+    <Content Include="Views\ArticleList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2287,6 +2291,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>

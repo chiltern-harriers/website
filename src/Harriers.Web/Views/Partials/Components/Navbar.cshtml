@@ -8,9 +8,7 @@
             {
                 var brandLink = Model.BrandLogo.FirstOrDefault();
                 <a class="navbar-item " href="@brandLink.Link.Url">
-                    <span class="icon">
-                        <i class="@brandLink.ClassName has-text-primary fa-lg"></i>
-                    </span>&nbsp;
+                    <img src="~/Content/images/logo-inverse.svg" />&nbsp;
                     @brandLink.Link.Name
                 </a>
             }

@@ -28,7 +28,7 @@
                             @if (Model.PrimaryLink.HasValue())
                             {
                                 <div class="buttons">
-                                    <a class="button is-mainbutton is-large" href="@Model.PrimaryLink.Url" target="@Model.PrimaryLink.Target" rel="nofollow">
+                                    <a class="button is-mainbutton is-medium" href="@Model.PrimaryLink.Url" target="@Model.PrimaryLink.Target" rel="nofollow">
                                         @Model.PrimaryLink.Name
                                     </a>
                                 </div>
@@ -38,12 +38,12 @@
                                 <div class="is-size-6 is-size-5-tablet">
                                     <p>
                                         @Model.SecondaryLinkBeforeText
-                                    <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
-                                        @Model.SecondaryLink.Name
-                                    </a>
-                                </p>
-                            </div>
-                        }
+                                        <a href="@Model.SecondaryLink.Url" target="@Model.SecondaryLink.Target" class="is-info" rel="nofollow">
+                                            @Model.SecondaryLink.Name
+                                        </a>
+                                    </p>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

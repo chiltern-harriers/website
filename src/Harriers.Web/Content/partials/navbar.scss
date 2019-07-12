@@ -132,11 +132,15 @@ Navbar
         }
     }
 }
+
+.navbar-menu.is-active {
+
+}
 //Cloned fixed navbar
 #navbar-clone {
     position: fixed;
     opacity: .97;
-    background: $dark-green;
+    /*background: $dark-green;*/
     top: 0;
     left: 0;
     width: 100%;

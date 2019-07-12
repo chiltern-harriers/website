@@ -119,6 +119,11 @@ Navbar
 
     .navbar-item, .navbar-burger {
         color: $white;
+        opacity: 0.8;
+        &:hover {
+            background: inherit;
+            opacity: 1;
+        }
     }
 
     #navbarMenu.is-active {

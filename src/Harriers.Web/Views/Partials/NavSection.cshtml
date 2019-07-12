@@ -18,9 +18,16 @@
 
     $(document).ready(function() {
         // Check for click events on the navbar burger icon
-        $(".navbar-burger").click(function() {
-            $(".navbar-burger").toggleClass("is-active");
-            $(".navbar-menu").toggleClass("is-active");
+        $(".navbar-burger").click(function () {
+            var $menu = $(".navbar-menu"),
+                $burger = $(".navbar-burger");
+            if ($burger.hasClass("is-active")) {
+                $burger.removeClass("is-active");
+                $menu.slideUp("fast").removeClass("is-active");
+            } else {
+                $burger.addClass("is-active");
+                $menu.slideDown().addClass("is-active");
+            }
 
         });
     });

@@ -2265,7 +2265,6 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Partials\Components\Navbar.cshtml" />
-    <Content Include="Views\Partials\Components\NavbarClone.cshtml" />
     <Content Include="Views\ContentPage.cshtml" />
     <Content Include="Views\OurRaces.cshtml" />
     <Content Include="Views\People.cshtml" />

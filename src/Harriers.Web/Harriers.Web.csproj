@@ -2261,7 +2261,6 @@
     <Content Include="Views\Partials\Renderers\RenderContent.cshtml" />
     <Content Include="Views\Partials\Renderers\RenderSections.cshtml" />
     <Content Include="Views\Partials\CategoryLinks.cshtml" />
-    <Content Include="Views\Partials\NavSection.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />

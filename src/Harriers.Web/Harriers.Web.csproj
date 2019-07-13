@@ -20,7 +20,7 @@
     <RootNamespace>Harriers.Web</RootNamespace>
     <AssemblyName>Harriers.Web</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -2235,7 +2235,6 @@
     <Content Include="Views\master.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\GenericPage.cshtml" />
-    <Content Include="Views\Partials\Components\_Race.cshtml" />
     <Content Include="Views\Partials\Grid\UIKitGrid.cshtml" />
     <Content Include="Views\Partials\Nested\Content\CallToActionSection.cshtml" />
     <Content Include="Views\Partials\Nested\Content\IconsListSection.cshtml" />
@@ -2279,6 +2278,7 @@
     <Content Include="Views\Races.cshtml" />
     <Content Include="Views\Article.cshtml" />
     <Content Include="Views\ArticleList.cshtml" />
+    <Content Include="Views\Partials\Components\NavbarHome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2312,11 +2312,12 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54822</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://chiltern.dev.local</IISUrl>
+          <IISUrl>
+          </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

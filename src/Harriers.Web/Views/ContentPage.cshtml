@@ -1,29 +1,29 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ContentPage>
-    @using ContentModels = Umbraco.Web.PublishedModels;
-    @{
-    Layout = "master.cshtml";;
-    }
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}
 
-    @Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
 
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-one-quarter-tablet">
-                    <aside class="menu">
-                        <p class="menu-label">
-                            <a href="@(Model.Level == 2 ? Model.Url : Model.Parent.Url)">@(Model.Level == 2 ? Model.Name : Model.Parent.Name)</a>
-                        </p>
-                        <ul class="menu-list">
-                            @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
-                        </ul>
-                    </aside>
-                </div>
-                <div class="column is-three-quarter-tablet">
-                    <div class="content is-medium">
-                        @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
-                    </div>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-quarter-tablet">
+                <aside class="menu">
+                    <p class="menu-label">
+                        <a href="@(Model.Level == 2 ? Model.Url : Model.Parent.Url)">@(Model.Level == 2 ? Model.Name : Model.Parent.Name)</a>
+                    </p>
+                    <ul class="menu-list">
+                        @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
+                    </ul>
+                </aside>
+            </div>
+            <div class="column is-three-quarter-tablet">
+                <div class="content is-medium">
+                    @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>

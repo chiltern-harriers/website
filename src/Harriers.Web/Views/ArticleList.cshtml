@@ -1,5 +1,69 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticleList>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits UmbracoViewPage<ArticleList>
+@using Harriers.Web.Extensions;
+
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
+
+    var articles = Model.Children.Select(x => new Article(x)).OrderBy(x => x.CreateDate).ToList();
+    var hasPaging = true;
+    var numberOfPosts = (int)Model.ItemsPerRow;
+    var pageCount = (int)Math.Ceiling((double)articles.Count / (double)numberOfPosts);
+    var page = SetPageNumber(pageCount);
+    var pagedBlogposts = articles.Skip((page - 1) * numberOfPosts).Take(numberOfPosts).ToList();
+}
+
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.PreListingContent)
+
+@if (!articles.HasValue())
+{
+    <div class="column has-text-centered">
+        <p class="is-size-4">There are no posts at this time, try again later.</p>
+    </div>
+    return;
+}
+
+@if (pagedBlogposts.Count > 0)
+{
+    @SectionHelper.RenderSectionStart(Model.BackgroundColour?.Label, true)
+
+    foreach (var blogPost in pagedBlogposts)
+    {
+        <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow.ToString())">
+            @Html.Partial("~/Views/Partials/Nested/Item/Article.cshtml", blogPost)
+        </div>
+    }
+
+    if (articles.Count > numberOfPosts && hasPaging)
+    {
+        <div class="column is-12">
+            <div class="buttons is-centered">
+                @for (int i = 1; i <= pageCount; i++)
+                {
+                    <a class="button is-medium @(page == i ? "is-light" : "is-link")" href="@("?page=" + i)">@i</a>
+                }
+            </div>
+        </div>
+    }
+    @SectionHelper.RenderSectionEnd()
+}
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.PostListingContent)
+
+@functions {
+    // gets the page from the querystring and sets it to one if it is out of range
+    int SetPageNumber(int pageCount)
+    {
+        var page = 1;
+        if (!string.IsNullOrEmpty(Request.QueryString["page"]))
+        {
+            int.TryParse(Request.QueryString["page"], out page);
+            if (page <= 0 || page > pageCount)
+            {
+                page = 1;
+            }
+        }
+        return page;
+    }
 }

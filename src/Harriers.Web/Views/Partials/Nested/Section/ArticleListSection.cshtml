@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ArticleListSection>
+
+@{
+    // get the list of blogs
+    var allArticles = Umbraco.ContentQuery.ContentAtRoot().First().FirstChild<ArticleList>().Children<Article>();
+    var pagedArticles = allArticles.Select(x => new Article(x)).Take((int)Model.ItemsToShow);
+    var itemsPerRow = Model.ItemsPerRow.ToString();
+}
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColour.Label)
+@Html.Partial($"~/Views/Partials/Nested/Component/TitleComponent.cshtml", new TitleComponent(Model))
+
+@foreach (var article in pagedArticles)
+{
+    <div class="column @RazorHelper.ColumnClass(itemsPerRow)">
+        @Html.Partial($"~/Views/Partials/Nested/Item/Article.cshtml", article)
+    </div>
+}
+
+@Html.Partial($"~/Views/Partials/Nested/Component/LinkComponent.cshtml", new LinkComponent(Model))
+
+@SectionHelper.RenderSectionEnd()

@@ -1,5 +1,51 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Article>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits UmbracoViewPage<Article>
+@using Harriers.Web.Extensions
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
 }
+
+@if (Model.ArticleImage.HasValue())
+{
+    <section id="hero" class="image has-spacing image is-3by1">
+        <img src="@Model.ArticleImage.First().Url" class="is-background" />
+    </section>
+}
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <div class="column is-8-tablet is-offset-2-tablet is-paddingless">
+                @if (Model.HeaderTitle.HasValue())
+                {
+                    <h1 class="title is-2">@Model.HeaderTitle</h1>
+                }
+                <h2 class="subtitle is-4">@Model.CreateDate.ToShortDateString()</h2>
+                @if (Model.Categories.HasValue())
+                {
+                    <div class="has-spacing-bottom">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <span class="button is-dark is-inverted is-outlined">@category</span>
+                        }
+                    </div>
+                }
+                @if (Model.Subtitle.HasValue())
+                {
+                    <h2 class="subtitle is-size-4">@Model.Subtitle</h2>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section has-spacing section-gray">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-large is-8-tablet is-offset-2-tablet">
+                <article>
+                    <div class="content is-large">
+                        @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>

@@ -7,7 +7,7 @@
         <figure class="image is-square is-circle">
             @if (Model.Photo.HasValue())
             {
-                @RazorHelper.ResponsiveImage(Model.Photo.FirstOrDefault(), Model.Name, "is-background is-rounded")
+                @RazorHelper.ResponsiveImage(Model.Photo, Model.Name, "is-background is-rounded")
             }
         </figure>
     </div>

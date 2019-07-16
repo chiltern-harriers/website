@@ -7,7 +7,7 @@
             <div class="image has-spacing image is-16by9">
                 @if (Model.ArticleImage.HasValue())
                 {
-                    @RazorHelper.ResponsiveImage(Model.ArticleImage.FirstOrDefault(), Model.HeaderTitle, "is-background", "1")
+                    @RazorHelper.ResponsiveImage(Model.ArticleImage, Model.HeaderTitle, "is-background", "1")
                 }
             </div>
         </div>

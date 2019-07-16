@@ -1,5 +1,24 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.People>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits UmbracoViewPage<People>
+@using Harriers.Web.Extensions
+
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
+    var people = Model.Children.Select(x => new Person(x));
 }
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml", new HeaderSection(Model))
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.PreListingContent)
+
+@SectionHelper.RenderSectionStart(Model.BackgroundColour?.Label, true)
+@if (people.HasValue())
+{
+    foreach (var person in people)
+    {
+        <div class="column @RazorHelper.ColumnClass(Model.ItemsPerRow.ToString())">
+            @Html.Partial("~/Views/Partials/Nested/Item/PersonItem.cshtml", person)
+        </div>
+    }
+}
+@SectionHelper.RenderSectionEnd()
+
+@Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", Model.PostListingContent)

@@ -38,12 +38,16 @@
     if (articles.Count > numberOfPosts && hasPaging)
     {
         <div class="column is-12">
-            <div class="buttons is-centered">
-                @for (int i = 1; i <= pageCount; i++)
-                {
-                    <a class="button is-medium @(page == i ? "is-light" : "is-link")" href="@("?page=" + i)">@i</a>
-                }
-            </div>
+            <nav class="pagination is-rounded" role="navigation" aria-label="navigation">
+                <ul class="pagination list">
+                    @for (int i = 1; i <= pageCount; i++)
+                    {
+                    <li>
+                        <a class="pagination-link @(page == i ? "is-current" : "")" href="@("?page=" + i)">@i</a>
+                    </li>
+                    }
+                </ul>  
+            </nav>
         </div>
     }
     @SectionHelper.RenderSectionEnd()

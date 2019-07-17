@@ -6,7 +6,7 @@
 
     var articles = Model.Children.Select(x => new Article(x)).OrderBy(x => x.CreateDate).ToList();
     var hasPaging = true;
-    var numberOfPosts = (int)Model.ItemsPerRow;
+    var numberOfPosts = (int)Model.ItemsPerRow * (int)Model.ItemsPerRow;
     var pageCount = (int)Math.Ceiling((double)articles.Count / (double)numberOfPosts);
     var page = SetPageNumber(pageCount);
     var pagedBlogposts = articles.Skip((page - 1) * numberOfPosts).Take(numberOfPosts).ToList();

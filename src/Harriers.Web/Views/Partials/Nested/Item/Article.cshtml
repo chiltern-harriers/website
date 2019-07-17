@@ -2,31 +2,31 @@
 @using Harriers.Web.Extensions
 
 
-    <div class="card has-equal-height">
-        <div class="image-card">
-            <div class="image has-spacing image is-16by9">
-                @if (Model.ArticleImage.HasValue())
-                {
-                    @RazorHelper.ResponsiveImage(Model.ArticleImage, Model.HeaderTitle, "is-background", "1")
-                }
-            </div>
-        </div>
-
-        <div class="card-content">
-            <div class="content">
-                @if (Model.HeaderTitle.HasValue())
-                {
-                    <h3 class="title">@Model.HeaderTitle</h3>
-                }
-                <p class="subtitle">@Model.CreateDate.ToShortDateString()</p>
-                <div class="has-spacing-bottom">
-                    @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
-                </div>
-                @if (Model.Subtitle.HasValue())
-                {
-                    <p>@Model.Subtitle</p>
-                }
-                <a href="@Model.Url" class="button is-link">Read more</a>
-            </div>
+<div class="card has-equal-height">
+    <div class="image-card">
+        <div class="image has-spacing image is-16by9">
+            @if (Model.ArticleImage.HasValue())
+            {
+                @RazorHelper.ResponsiveImage(Model.ArticleImage, Model.HeaderTitle, "is-background", "1")
+                                }
         </div>
     </div>
+
+    <div class="card-content">
+        <div class="content">
+            @if (Model.HeaderTitle.HasValue())
+            {
+                <h3 class="title">@Model.HeaderTitle</h3>
+            }
+            <p class="subtitle">@Model.CreateDate.ToShortDateString()</p>
+            <div class="has-spacing-bottom">
+                @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Categories)
+            </div>
+            @if (Model.Subtitle.HasValue())
+            {
+                <p>@Model.Subtitle</p>
+            }
+            <a href="@Model.Url" class="button is-link">Read more</a>
+        </div>
+    </div>
+</div>

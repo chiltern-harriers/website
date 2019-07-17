@@ -7,13 +7,13 @@
 @if (Model.ArticleImage.HasValue())
 {
     <section id="hero" class="image has-spacing image is-3by1">
-        <img src="@Model.ArticleImage.First().Url" class="is-background" />
+        <img src="@Model.ArticleImage.Url" class="is-background" />
     </section>
 }
 <section class="hero is-dark">
     <div class="hero-body">
         <div class="container">
-            <div class="column is-8-tablet is-offset-2-tablet is-paddingless">
+            <div class="column is-8-tablet is-paddingless">
                 @if (Model.HeaderTitle.HasValue())
                 {
                     <h1 class="title is-2">@Model.HeaderTitle</h1>
@@ -39,9 +39,9 @@
 <section class="section has-spacing section-gray">
     <div class="container">
         <div class="columns">
-            <div class="column is-large is-8-tablet is-offset-2-tablet">
+            <div class="colum">
                 <article>
-                    <div class="content is-large">
+                    <div class="content is-medium">
                         @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
                     </div>
                 </article>

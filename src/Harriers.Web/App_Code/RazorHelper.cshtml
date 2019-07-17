@@ -3,6 +3,94 @@
 @using FaLinksPropertyEditor.Models
 @using Harriers.Web.Extensions
 
+@helper NavbarScript() { 
+    <script>
+    if ($('#navbar-clone').length) {
+        $(window).scroll(function () {
+            var height = $(window).scrollTop();
+            if (height > 90) {
+                $("#navbar-clone").addClass('is-active');
+            } else {
+                $("#navbar-clone").removeClass('is-active');
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $(".navbar-burger").click(function () {
+            var $menu = $(".navbar-menu"),
+                $burger = $(".navbar-burger");
+            if ($burger.hasClass("is-active")) {
+                $burger.removeClass("is-active");
+                $menu.slideUp("fast").removeClass("is-active");
+            } else {
+                $burger.addClass("is-active");
+                $menu.slideDown().addClass("is-active");
+            }
+        });
+    });
+    </script>
+}
+
+@helper Navbar(Umbraco.Web.PublishedModels.WebsiteConfiguration model, string id, string brandLogoUrl, string navbarClasses)
+{
+    <nav id="@id" class="navbar @navbarClasses" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                @if (model.BrandLogo.HasValue())
+                {
+                    var brandLink = model.BrandLogo.FirstOrDefault();
+                    <a class="navbar-item " href="@brandLink.Link.Url">
+                        <img src="@brandLogoUrl" />&nbsp;
+                        @brandLink.Link.Name
+                    </a>
+                }
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    @if (model.LeftNav != null)
+                    {
+                        foreach (var item in model.LeftNav)
+                        {
+                            if (item.Link != null)
+                            {
+                                <a class="navbar-item" href="@item.Link.Url">
+                                    @if (item.ClassName.HasValue())
+                                    {
+                                        <span class="icon has-text-link">
+                                            <i class="@item.ClassName"></i>
+                                        </span>@:&nbsp;
+                                    }
+
+                                    @item.Link.Name
+                                </a>
+                            }
+                        }
+                    }
+                </div>
+                <div class="navbar-end">
+                    @if (model.RightNav != null)
+                    {
+                        foreach (var socialLink in model.RightNav)
+                        {
+                            <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="@socialLink.Link.Url" target="@socialLink.Link.Target">
+                                <span class="icon @socialLink.PrimaryClass">
+                                    <i class="@socialLink.ClassName fa-lg"></i>
+                                </span>
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </nav>
+}
+
 @helper ResponsiveImage(IPublishedContent image, string alt = "", string classList = "", string itemsPerRow = "1")
 {
     var srcSet = "";
@@ -16,31 +104,31 @@
             break;
 
         default:
-        srcSet = image.GetCropUrl(480) + " 480w, " +
-                 image.GetCropUrl(769) + " 769w, " +
-                 image.GetCropUrl(1024) + " 1024w, " +
-                 image.GetCropUrl(1216) + " 1216w, " +
-                 image.GetCropUrl(1408) + " 1408w";
-        break;
+            srcSet = image.GetCropUrl(480) + " 480w, " +
+                     image.GetCropUrl(769) + " 769w, " +
+                     image.GetCropUrl(1024) + " 1024w, " +
+                     image.GetCropUrl(1216) + " 1216w, " +
+                     image.GetCropUrl(1408) + " 1408w";
+            break;
     }
     <img srcset="@srcSet" alt="@alt" class="@classList">
 }
 
-@helper RenderFaLink(FaLink faLink, string classList = "", string classListIcon ="")
+@helper RenderFaLink(FaLink faLink, string classList = "", string classListIcon = "")
 {
     if (faLink.Link.HasValue())
-     {
-         <a href="@faLink.Link.Url" class="@faLink.PrimaryClass @faLink.SecondaryClass @classList" target="@faLink.Link.Target">
-             @if (faLink.ClassName.HasValue())
-             {
-                 <span class="icon @classListIcon">
-                     <i class="@faLink.ClassName"></i>
-                 </span>
-                 @:&nbsp;
-             }
-             @faLink.Link.Name
-         </a>
-     }
+    {
+        <a href="@faLink.Link.Url" class="@faLink.PrimaryClass @faLink.SecondaryClass @classList" target="@faLink.Link.Target">
+            @if (faLink.ClassName.HasValue())
+            {
+                <span class="icon @classListIcon">
+                    <i class="@faLink.ClassName"></i>
+                </span>
+                @:&nbsp;
+            }
+            @faLink.Link.Name
+        </a>
+    }
 }
 
 @helper RenderFaIcon(FaIcon faIcon)

@@ -1,0 +1,72 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<MapSection>
+@using Harriers.Web.Extensions
+@using System.Linq
+
+@if (Model.MapAlignment == "Left" || Model.MapAlignment == "Right")
+{
+    <div class="columns has-spacing-top">
+        <div class="column">
+            @if (Model.MapAlignment == "Left")
+            {
+                @RenderMap()
+            }
+            else
+            {
+                <div class="is-hidden-mobile">
+                    @RenderText()
+                </div>
+            }
+        </div>
+        <div class="column">
+            @if (Model.MapAlignment == "Left")
+            {
+                @RenderText()
+            }
+            else
+            {
+                @RenderMap()
+                <div class="is-hidden-tablet">
+                    @RenderText()
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <section class="section is-fullwidth is-paddingless">
+        <div class="container is-fluid is-paddingless">
+            <div class="columns">
+                <div class="column is-full">
+                    @RenderText()
+                </div>
+            </div>
+        </div>
+    </section>    
+    <section class="section is-fullwidth is-paddingless">
+        <div class="container is-fluid is-paddingless">
+            <div class="columns">
+                <div class="column is-full">
+                    @RenderMap()
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
+
+@helper RenderMap()
+{
+    <div class="iframe-container image is-3by1">
+        @Html.Raw(Model.EmbededLink)
+    </div>
+}
+
+@helper RenderText()
+{
+    if (Model.MapContent.HasValue())
+    {
+        @Html.Raw(Model.MapContent)
+    }
+}

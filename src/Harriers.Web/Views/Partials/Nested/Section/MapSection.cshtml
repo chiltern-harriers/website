@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<MapSection>
+@using Harriers.Web.Extensions
+@using System.Linq
+
+<section class="section is-paddingless is-fullwidth">
+    <div class="container is-fluid is-marginless">
+        <div class="columns">
+            <div class="column is-paddingless is-full">
+                <div class="iframe-container image is-3by1">
+                    @Html.Raw(Model.EmbededLink)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -53,22 +53,31 @@
             </div>
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-start">
-                    @if (model.LeftNav != null)
+                    @foreach (var page in @model.Parent.Children.Where(c => c.IsVisible() &&
+                                        (c.ContentType.Alias != "websiteConfiguration") &&
+                                        (c.ContentType.Alias != "people")))
                     {
-                        foreach (var item in model.LeftNav)
+                        if (page.Children.Count() > 0)
                         {
-                            if (item.Link != null)
-                            {
-                                <a class="navbar-item" href="@item.Link.Url">
-                                    @if (item.ClassName.HasValue())
-                                    {
-                                        <span class="icon has-text-link">
-                                            <i class="@item.ClassName"></i>
-                                        </span>@:&nbsp;
-                                    }
-                                    @item.Link.Name
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-item" href="@page.Url">
+                                    @page.Name
                                 </a>
-                            }
+                                <div class="navbar-dropdown">
+                                    @foreach (var child in page.Children.Where(c => c.IsVisible()))
+                                    {
+                                        <a class="navbar-item" href="@child.Url">
+                                            @child.Name
+                                        </a>
+                                    }
+                                </div>
+                             </div>
+                        }
+                        else
+                        {
+                            <a class="navbar-item" href="@page.Url">
+                                @page.Name
+                            </a>
                         }
                     }
                 </div>

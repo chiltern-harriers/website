@@ -57,7 +57,7 @@
                                         (c.ContentType.Alias != "websiteConfiguration") &&
                                         (c.ContentType.Alias != "people")))
                     {
-                        if (page.Children.Count() > 0)
+                        if (page.Children.Count() > 0 && page.ContentType.Alias != "articleList")
                         {
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-item" href="@page.Url">

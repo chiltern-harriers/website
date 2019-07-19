@@ -2285,6 +2285,7 @@
     <Content Include="Views\Partials\Nested\Section\ArticleListSection.cshtml" />
     <Content Include="Views\Partials\Nested\Section\MapSection.cshtml" />
     <Content Include="Views\Partials\Nested\Content\MapSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\ImageSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

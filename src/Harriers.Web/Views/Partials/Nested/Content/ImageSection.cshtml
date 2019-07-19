@@ -1,0 +1,69 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ImageSection>
+@using Umbraco.Web.PublishedModels
+@using Harriers.Web.Extensions
+
+
+@if (Model.ImageAlignment == "Left" || Model.ImageAlignment == "Right")
+{
+    <div class="columns has-spacing-top">
+        <div class="column">
+            @if (Model.ImageAlignment == "Left")
+            {
+                @RenderImage()
+            }
+            else
+            {
+                <div class="is-hidden-mobile">
+                    @RenderImageText()
+                </div>
+            }
+        </div>
+        <div class="column">
+            @if (Model.ImageAlignment == "Left")
+            {
+                @RenderImageText()
+            }
+            else
+            {
+                @RenderImage()
+                <div class="is-hidden-tablet">
+                    @RenderImageText()
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    @RenderImageText()
+    @RenderImage()
+}
+
+@helper RenderImage()
+{
+    <div class="image is-2by1 has-spacing-bottom">
+        @if (Model.Image.HasValue())
+        {
+            @RazorHelper.ResponsiveImage(Model.Image, classList: "is-background")
+        }
+    </div>
+}
+
+@helper RenderImageText()
+{
+    if (Model.Title.HasValue())
+    {
+        <h2 class="title is-size-3">@Model.Title</h2>
+        <hr />
+    }
+    if (Model.Subtitle.HasValue())
+    {
+        <p class="subtitle is-size-5">
+            @Model.Subtitle
+        </p>
+    }
+    if (Model.Link != null)
+    {
+        @RazorHelper.RenderFaLink(Model.Link, classList: "button is-link is-medium")
+    }
+}

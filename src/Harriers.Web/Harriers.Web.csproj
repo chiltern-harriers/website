@@ -2320,15 +2320,17 @@
       CustomCollectFiles;
       $(CopyAllFilesToSingleFolderForPackageDependsOn);
     </CopyAllFilesToSingleFolderForPackageDependsOn>
-    <Target Name="CustomCollectFiles">
-      <ItemGroup>
-        <MediaFiles Include="Media\*" />
-        <FilesForPackagingFromProject Include="%(MediaFiles.Identity)">
-          <DestinationRelativePath>Media\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
-        </FilesForPackagingFromProject>
-      </ItemGroup>
-    </Target>
   </PropertyGroup>
+  <Target Name="CustomCollectFiles">
+    <ItemGroup>
+      <MediaFiles Include="Media\**\*">
+        <Dir>Media</Dir>
+      </MediaFiles>
+      <FilesForPackagingFromProject Include="@(MediaFiles)">
+        <DestinationRelativePath>%(MediaFiles.Dir)\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+  </Target>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">

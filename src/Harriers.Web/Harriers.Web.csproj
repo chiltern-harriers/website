@@ -2144,13 +2144,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\UmbracoExtensions.cs" />
     <Compile Include="Helpers\RazorHelpers.cs" />
-    <Compile Include="Models\Navigation\NavigationLink.cs" />
-    <Compile Include="Models\Navigation\NavigationListItem.cs" />
-    <Compile Include="Models\SiteConfiguration\SocialMediaLink.cs" />
-    <Compile Include="Models\SiteConfiguration\SocialMediaLinkViewModel.cs" />
-    <Compile Include="Models\SiteConfiguration\WebsiteConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\SiteConfigurationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />
@@ -2300,6 +2294,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>

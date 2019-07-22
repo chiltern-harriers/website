@@ -3,3 +3,15 @@
 @{
 	Layout = "master.cshtml";
 }
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="content">
+                        @Html.Partial("~/Views/Partials/Renderers/RenderContent.cshtml", Model.NestedContent)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

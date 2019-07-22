@@ -4,6 +4,8 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\uSync.8.0.0-beta6\build\uSync.props" Condition="Exists('..\packages\uSync.8.0.0-beta6\build\uSync.props')" />
   <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.props')" />
+  <Import Project=".\Harriers.Web.props" Condition="Exists('.\Harriers.Web.props')" />
+  <Import Project=".\Harriers.Web.targets" Condition="Exists('.\Harriers.Web.targets')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -2155,7 +2157,6 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\serilog.user.config" />
@@ -2315,22 +2316,6 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <PropertyGroup>
-    <CopyAllFilesToSingleFolderForPackageDependsOn>
-      CustomCollectFiles;
-      $(CopyAllFilesToSingleFolderForPackageDependsOn);
-    </CopyAllFilesToSingleFolderForPackageDependsOn>
-  </PropertyGroup>
-  <Target Name="CustomCollectFiles">
-    <ItemGroup>
-      <MediaFiles Include="Media\**\*">
-        <Dir>Media</Dir>
-      </MediaFiles>
-      <FilesForPackagingFromProject Include="@(MediaFiles)">
-        <DestinationRelativePath>%(MediaFiles.Dir)\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
-      </FilesForPackagingFromProject>
-    </ItemGroup>
-  </Target>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
@@ -2361,12 +2346,15 @@
     <Error Condition="!Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets'))" />
     <Error Condition="!Exists('..\packages\uSync.8.0.0-beta6\build\uSync.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.8.0.0-beta6\build\uSync.props'))" />
     <Error Condition="!Exists('..\packages\uSync.8.0.0-beta6\build\uSync.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.8.0.0-beta6\build\uSync.targets'))" />
+    <Error Condition="!Exists('.\Harriers.Web.props')" Text="$([System.String]::Format('$(ErrorText)', '.\Harriers.Web.props'))" />
+    <Error Condition="!Exists('.\Harriers.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '.\Harriers.Web.targets'))" />
     <Error Condition="!Exists('..\packages\LibSassHost.Native.win-x86.1.2.3\build\LibSassHost.Native.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibSassHost.Native.win-x86.1.2.3\build\LibSassHost.Native.win-x86.props'))" />
     <Error Condition="!Exists('..\packages\LibSassHost.Native.win-x64.1.2.3\build\LibSassHost.Native.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibSassHost.Native.win-x64.1.2.3\build\LibSassHost.Native.win-x64.props'))" />
   </Target>
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
   <Import Project="..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.0.1\build\UmbracoCms.targets')" />
   <Import Project="..\packages\uSync.8.0.0-beta6\build\uSync.targets" Condition="Exists('..\packages\uSync.8.0.0-beta6\build\uSync.targets')" />
+  <Import Project=".\Harriers.Web.targets" Condition="Exists('Harriers.Web.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

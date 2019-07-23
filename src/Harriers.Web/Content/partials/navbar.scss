@@ -2,7 +2,7 @@
 Navbar
 ========================================================================== */
 .navbar-dropdown {
-    z-index:100;
+    z-index:999999;
     .navbar-item {
         color: $text !important;
     }
@@ -36,6 +36,9 @@ Navbar
         }
     }
 }
+#navbarMenu, .navbar {
+    position: static;
+}
 #navbar-home {
     background: transparent;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 8px 0px;
@@ -46,6 +49,7 @@ Navbar
     .navbar-item, .navbar-burger {
         color: $white;
         opacity: 0.8;
+
         &:hover {
             background: inherit;
             opacity: 1;

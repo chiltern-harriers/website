@@ -2,6 +2,7 @@
 Navbar
 ========================================================================== */
 .navbar-dropdown {
+    z-index:100;
     .navbar-item {
         color: $text !important;
     }

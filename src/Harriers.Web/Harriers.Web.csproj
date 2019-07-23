@@ -2229,7 +2229,7 @@
     <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\BulmaGrid.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\master.cshtml" />
@@ -2281,6 +2281,9 @@
     <Content Include="Views\Partials\Nested\Section\MapSection.cshtml" />
     <Content Include="Views\Partials\Nested\Content\MapSection.cshtml" />
     <Content Include="Views\Partials\Nested\Content\ImageSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\RichTextContent.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\GridSection.cshtml" />
+    <Content Include="Views\Partials\Nested\Section\TitleComponent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

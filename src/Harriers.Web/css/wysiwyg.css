@@ -1,27 +1,27 @@
 
 
 /**umb_name:h1*/
-h1 {
+.is-size-1 {
 }
 
 /**umb_name:h2*/
-h2 {
+.is-size-2 {
 }
 
 /**umb_name:h3*/
-h3 {
+.is-size-3 {
 }
 
 /**umb_name:h4*/
-h4 {
+.is-size-4 {
 }
 
 /**umb_name:h5*/
-h5 {
+.is-size-5 {
 }
 
 /**umb_name:h6*/
-h6 {
+.is-size-6 {
 }
 
 /**umb_name:code*/
@@ -37,11 +37,11 @@ span {
 }
 
 /**umb_name:table - layout*/
-.uk-table {
+.table {
 	background: inherit;
 }
 
 /**umb_name:button - styling*/
-.uk-button {
+.button {
 	/**/
 }

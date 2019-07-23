@@ -1,8 +1,12 @@
-﻿.hero-banner.has-background-dark {
-    background-color: $dark-green !important;
-
-    img {
-        opacity: 0.4;
+﻿section.hero-banner {
+    &.has-background-dark, &.has-background-info, &.has-background-dark, &.has-background-white, &.has-background-grey-lighter {
+        .hero-banner-content {
+            .block {
+                .title {
+                    color: $white !important;
+                }
+            }
+        }
     }
 }
 

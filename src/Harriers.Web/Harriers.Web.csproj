@@ -494,13 +494,13 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="config\splashes\noNodes.aspx" />
+    <Content Include="Content\favicon.ico" />
     <Content Include="Content\favicon\android-chrome-192x192.png" />
     <Content Include="Content\favicon\android-chrome-512x512.png" />
     <Content Include="Content\favicon\apple-touch-icon.png" />
     <Content Include="Content\favicon\browserconfig.xml" />
     <Content Include="Content\favicon\favicon-16x16.png" />
     <Content Include="Content\favicon\favicon-32x32.png" />
-    <Content Include="Content\favicon\favicon.ico" />
     <Content Include="Content\favicon\mstile-150x150.png" />
     <Content Include="Content\favicon\safari-pinned-tab.svg" />
     <Content Include="Content\fontawesome\css\all.css" />

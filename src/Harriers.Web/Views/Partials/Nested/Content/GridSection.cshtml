@@ -1,0 +1,7 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<GridSection>
+
+<section class="section">
+    <div class="container">
+        @Html.GetGridHtml(Model.GetProperty("gridContents"), "BulmaGrid")
+    </div>
+</section>

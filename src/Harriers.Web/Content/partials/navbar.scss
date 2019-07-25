@@ -9,6 +9,7 @@ Navbar
 }
 
 #navbarMenu {
+    background: transparent;
     &.is-active {
         background-color: $dark-grey;
         color: $white !important;

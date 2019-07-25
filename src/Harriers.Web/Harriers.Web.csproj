@@ -494,6 +494,15 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="config\splashes\noNodes.aspx" />
+    <Content Include="Content\favicon\android-chrome-192x192.png" />
+    <Content Include="Content\favicon\android-chrome-512x512.png" />
+    <Content Include="Content\favicon\apple-touch-icon.png" />
+    <Content Include="Content\favicon\browserconfig.xml" />
+    <Content Include="Content\favicon\favicon-16x16.png" />
+    <Content Include="Content\favicon\favicon-32x32.png" />
+    <Content Include="Content\favicon\favicon.ico" />
+    <Content Include="Content\favicon\mstile-150x150.png" />
+    <Content Include="Content\favicon\safari-pinned-tab.svg" />
     <Content Include="Content\fontawesome\css\all.css" />
     <Content Include="Content\fontawesome\css\all.min.css" />
     <Content Include="Content\fontawesome\css\brands.css" />
@@ -2127,6 +2136,7 @@
     <Content Include="Content\partials\utilities.scss" />
     <Content Include="Content\partials\hero.scss" />
     <Content Include="Content\partials\panels.scss" />
+    <Content Include="Content\favicon\site.webmanifest" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2284,6 +2294,7 @@
     <Content Include="Views\Partials\Nested\Section\RichTextContent.cshtml" />
     <Content Include="Views\Partials\Nested\Section\GridSection.cshtml" />
     <Content Include="Views\Partials\Nested\Section\TitleComponent.cshtml" />
+    <Content Include="Views\Partials\Nested\Content\GridSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

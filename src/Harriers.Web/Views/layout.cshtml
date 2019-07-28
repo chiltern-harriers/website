@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web.PublishedModels
+@using System.Web.Optimization
+
+@{
+    Layout = null;
+
+    var navigation = Model as INavigationBase;
+    var appSettings = Model.Root().Children<WebsiteConfiguration>().FirstOrDefault();
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="@navigation.Description">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/Content/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/Content/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/Content/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Chiltern Harriers A.C. | @Model.Name</title>
+    @Styles.Render("~/bundles/styles")
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("Head", false)
+</head>
+<body>
+    @RenderBody()
+
+    @Html.Partial("~/Views/Partials/Renderers/RenderSections.cshtml", appSettings.NestedFooter)
+</body>
+</html>
+
+

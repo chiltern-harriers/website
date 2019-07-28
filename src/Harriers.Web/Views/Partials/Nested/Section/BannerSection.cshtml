@@ -21,7 +21,7 @@
                         @if (Model.Subtitle.HasValue())
                         {
                             <div class="block is-size-5">
-                                <p>@Model.Subtitle</p>
+                                <p>@Html.Raw(Model.Subtitle)</p>
                             </div>
                         }
                         <div class="block hero-bannerbuttons">
